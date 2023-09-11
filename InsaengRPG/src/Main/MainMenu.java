@@ -1,9 +1,15 @@
+package Main;
+
+import Menu.AR;
+
 import java.util.Scanner;
 
 class MainMenu {
     public static void main(String[] args) {
         int ed = 0;
         int num = 0;
+
+        AR ar = new AR();
 
         System.out.print("메뉴를 선택해주세요.>");
 
@@ -16,6 +22,7 @@ class MainMenu {
                 break;
             case 2:
                 System.out.println("선택하신 메뉴는 알바 입니다");
+                ar.printAR();
                 break;
             case 3:
                 System.out.println("선택하신 메뉴는 파티 입니다");
