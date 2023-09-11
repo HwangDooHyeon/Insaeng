@@ -1,10 +1,10 @@
 package Main;
 
 public class User {
+
     // User값을 나타내는 필드
     private int Intel, Wealth, Sociability, Morality, Artistry, PTSD;
 
-    // 생성자
     public User() {}
 
     public User(int intel, int wealth, int sociability, int morality, int artistry, int PTSD) {
