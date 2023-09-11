@@ -1,17 +1,19 @@
 package Main;
+
 public class User {
 
     // User값을 나타내는 필드
     private int Intel, Wealth, Sociability, Morality, Artistry, PTSD;
 
-    // 생성자
-    public User() {
-        this.Intel = MIN;
-        this.Wealth = MIN;
-        this.Sociability=MIN;
-        this.Morality=MIN;
-        this.Artistry=MIN;
-        this.PTSD=MIN;
+    public User() {}
+
+    public User(int intel, int wealth, int sociability, int morality, int artistry, int PTSD) {
+        this.Intel = intel;
+        this.Wealth = wealth;
+        this.Sociability = sociability;
+        this.Morality = morality;
+        this.Artistry = artistry;
+        this.PTSD = PTSD;
     }
 
     // 기본값 final로 설정 = MIN=30; / MAX=100;
