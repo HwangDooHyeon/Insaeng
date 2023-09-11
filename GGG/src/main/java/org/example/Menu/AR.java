@@ -1,4 +1,4 @@
-package org.example.MainMenu;
+package org.example.Menu;
 
 public class AR {
     String f = "Farm";

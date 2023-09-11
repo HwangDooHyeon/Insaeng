@@ -1,4 +1,4 @@
-package org.example.MainMenu;
+package org.example;
 
 import java.util.Scanner;
 
