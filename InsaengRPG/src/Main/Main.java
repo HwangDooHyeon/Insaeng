@@ -1,7 +1,19 @@
-package Main;
+package src.Main;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        MainUpdate main = new MainUpdate();
+        main.initialize();
+
+        User user = new User();
+        user.initialize();
+
+        System.out.println(user.HP);
+
+        while(true)
+        {
+            main.update();
+            main.render();
+        }
     }
 }

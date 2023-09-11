@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/GGG/GGG.iml" filepath="$PROJECT_DIR$/GGG/GGG.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Insaeng.iml" filepath="$PROJECT_DIR$/.idea/Insaeng.iml" />
     </modules>
   </component>

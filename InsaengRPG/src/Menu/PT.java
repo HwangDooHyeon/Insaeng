@@ -1,10 +1,15 @@
-package Menu;
+package src.Menu;
+
+import src.Main.User;
+
+import java.util.Scanner;
 
 import Main.User;
 
 import java.util.Scanner;
 
 public class PT {
+
     private Scanner scanner = null;
     private int input(){
         int num = 0;
@@ -74,6 +79,5 @@ public class PT {
                 break;
         }
     }
-
 }
 
