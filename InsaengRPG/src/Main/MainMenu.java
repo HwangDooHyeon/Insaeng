@@ -5,12 +5,14 @@ import src.Menu.Edu;
 import src.Menu.Out;
 import src.Menu.PT;
 
+
 import java.util.Scanner;
 
 class MainMenu {
     public static void main(String[] args) {
         int ed = 0;
         int num = 0;
+
 
         System.out.print("메뉴를 선택해주세요.>");
 
