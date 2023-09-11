@@ -8,14 +8,18 @@ public class PT {
     private Scanner scanner = null;
     private int input(){
         int num = 0;
+
         menuTxt();
         System.out.println("입력 : ");
         num = scanner.nextInt();
 
+
         return num;
     }
 
+
     public PT(){
+
         scanner = new Scanner(System.in);
     }
 
@@ -70,4 +74,6 @@ public class PT {
                 break;
         }
     }
+
 }
+
