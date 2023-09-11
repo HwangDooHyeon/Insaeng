@@ -8,18 +8,18 @@ public class PT {
     private Scanner scanner = null;
     private int input(){
         int num = 0;
-        try{
-            menuTxt();
-            System.out.println("입력 : ");
-            num = scanner.nextInt();
-        }catch (Exception e){
-            System.out.println("error!!");
-        }
+
+        menuTxt();
+        System.out.println("입력 : ");
+        num = scanner.nextInt();
+
 
         return num;
     }
 
-    PT(){
+
+    public PT(){
+
         scanner = new Scanner(System.in);
     }
 
@@ -45,6 +45,7 @@ public class PT {
         }
 
         User user = new User();
+
         switch (i) {
             case 1:
                 System.out.println("홈파티를 선택하셨습니다.");
@@ -73,4 +74,6 @@ public class PT {
                 break;
         }
     }
+
 }
+
