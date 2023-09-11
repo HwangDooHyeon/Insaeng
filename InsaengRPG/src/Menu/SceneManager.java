@@ -36,7 +36,7 @@ public class SceneManager {
                 break;
             default:
                 System.out.println("선택하신 메뉴는 상태 입니다");
-                this.sceneState = new Status();
+                this.sceneState = new Status(); 
         }
         this.sceneState. initialize();
     }
