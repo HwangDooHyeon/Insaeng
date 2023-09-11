@@ -1,9 +1,14 @@
+package Main;
+
+import Menu.Edu;
+
 import java.util.Scanner;
 
 class MainMenu {
     public static void main(String[] args) {
         int ed = 0;
         int num = 0;
+        Edu edu = new Edu();
 
         System.out.print("메뉴를 선택해주세요.>");
 
@@ -13,6 +18,7 @@ class MainMenu {
         switch (e) {
             case 1:
                 System.out.println("선택하신 메뉴는 교육 입니다");
+                edu.printEdu();
                 break;
             case 2:
                 System.out.println("선택하신 메뉴는 알바 입니다");
