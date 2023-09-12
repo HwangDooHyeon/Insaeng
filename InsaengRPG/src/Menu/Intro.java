@@ -1,4 +1,4 @@
-package src.Start;
+package Menu;
 
 public class Intro {
 }

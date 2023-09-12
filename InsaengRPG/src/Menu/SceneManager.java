@@ -15,7 +15,12 @@ public class SceneManager {
 
     private Scene sceneState = null;
 
+<<<<<<< Updated upstream
     public void setScene(int i) {
+=======
+    public void setScene() {
+        int i = ScanManager.Scan();
+>>>>>>> Stashed changes
 
         switch (i) {
             case 1:
