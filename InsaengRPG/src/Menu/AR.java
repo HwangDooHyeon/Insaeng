@@ -1,6 +1,9 @@
-package Menu;
+package src.Menu;
+
+import java.util.Scanner;
 
 public class AR {
+
     private Scanner scanner = null;
     private int input(){
         int num = 0;

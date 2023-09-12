@@ -1,14 +1,23 @@
-<<<<<<< Updated upstream
 package Main;
-=======
-package src.Main;
 
 import Main.ObjectManager;
 import Menu.SceneManager;
 
 import java.util.Scanner;
->>>>>>> Stashed changes
 
 public class MainUpdate {
+    Scanner scanner = new Scanner(System.in);
 
+    public void initialize() {
+        ObjectManager.getInstance().initialize();
+        SceneManager.getInstance().setScene(0);
+    }
+
+    public void update() {
+        SceneManager.getInstance().update();
+    }
+
+    public void render() {
+        SceneManager.getInstance().render();
+    }
 }

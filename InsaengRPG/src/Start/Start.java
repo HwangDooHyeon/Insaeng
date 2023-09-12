@@ -1,4 +1,4 @@
-package Start;
+package src.Start;
 
 public class Start {
 }

@@ -1,5 +1,7 @@
-package Main;
+package src.Main;
 
 public class ObjManeger {
+
+
 
 }
