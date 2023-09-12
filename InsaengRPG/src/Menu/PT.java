@@ -1,11 +1,11 @@
-package src.Menu;
-
-import src.Main.User;
+package Main;
+import Main.ObjectManager;
+import src.Menu.Scene;
+import src.OBJ.MyObject;
 
 import java.util.Scanner;
 
-public class PT {
-
+public class PT extends Scene {
     private Scanner scanner = null;
     private int input(){
         int num = 0;
@@ -14,15 +14,10 @@ public class PT {
         System.out.println("입력 : ");
         num = scanner.nextInt();
 
-
         return num;
     }
 
 
-    public PT(){
-
-        scanner = new Scanner(System.in);
-    }
 
     public void menuTxt(){
         System.out.println("====== 파티 종류를 선택해 주세요 ======");
@@ -32,8 +27,14 @@ public class PT {
         System.out.println("===================================");
     }
 
-    public void printPt(){
+    @Override
+    public void initialize() {
+        this.user = ObjectManager.getInstance().getUser();
+        scanner = new Scanner(System.in);
+    }
 
+    @Override
+    public void update() {
         int i = input();
 
         while(true) {
@@ -45,14 +46,11 @@ public class PT {
             }
         }
 
-        User user = new User();
 
         switch (i) {
             case 1:
                 System.out.println("홈파티를 선택하셨습니다.");
                 System.out.println("돈 - 5\n" + "사교성 + 3\n" + "스트레스 + 2\n");
-
-
                 user.setSociability(user.getSociability() + 3);
                 user.setPTSD(user.getPTSD() + 2);
                 break;
@@ -60,8 +58,6 @@ public class PT {
             case 2:
                 System.out.println("마을잔치를 선택하셨습니다.");
                 System.out.println("돈 - 10\n" + "사교성 + 5\n" + "스트레스 + 2\n");
-
-
                 user.setSociability(user.getSociability() + 5);
                 user.setPTSD(user.getPTSD() + 2);
                 break;
@@ -69,11 +65,15 @@ public class PT {
             case 3:
                 System.out.println("왕국파티를 선택하셨습니다.");
                 System.out.println("돈 - 15\n" + "사교성 + 7\n" + "스트레스 + 2\n");
-
                 user.setSociability(user.getSociability() + 7);
                 user.setPTSD(user.getPTSD() + 2);
                 break;
         }
+    }
+
+    @Override
+    public void render() {
+        menuTxt();
     }
 }
 
