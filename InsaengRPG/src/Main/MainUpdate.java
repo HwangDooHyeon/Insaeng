@@ -1,4 +1,7 @@
-package src.Main;
+package Main;
+
+import Main.ObjectManager;
+import Menu.SceneManager;
 
 import java.util.Scanner;
 

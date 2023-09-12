@@ -4,10 +4,6 @@ import src.Main.User;
 
 import java.util.Scanner;
 
-import Main.User;
-
-import java.util.Scanner;
-
 public class PT {
 
     private Scanner scanner = null;

@@ -1,4 +1,4 @@
-package RDItem;
+package OBJ;
 
 public abstract class Object {
     protected String name;
@@ -39,6 +39,10 @@ public abstract class Object {
 
     public int getPTSD() { return PTSD; }
     public void setPTSD(int PTSD) { this.PTSD = PTSD; }
+
+    public abstract void initialize();
+    public abstract void update();
+    public abstract void render();
 
 
 }

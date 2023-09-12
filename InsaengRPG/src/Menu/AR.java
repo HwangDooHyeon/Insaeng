@@ -2,10 +2,6 @@ package src.Menu;
 
 import java.util.Scanner;
 
-import Main.User;
-
-import java.util.Scanner;
-
 public class AR {
 
     private Scanner scanner = null;
