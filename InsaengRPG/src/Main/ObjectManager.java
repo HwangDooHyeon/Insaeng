@@ -19,12 +19,6 @@ public class ObjectManager {
     Object user = null;
     Object item = null;
 
-
-
-    public void setItem(Object item) {
-        this.item = item;
-    }
-
     public void initialize(){
         this.user = new User();
         this.item = new Item();

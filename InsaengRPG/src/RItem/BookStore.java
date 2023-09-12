@@ -1,4 +1,4 @@
 //package src.RItem;
 //
-//public class BookStore extends itemManege{
+//public class BookStore extends itemManager{
 //}
