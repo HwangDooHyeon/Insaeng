@@ -1,4 +1,5 @@
 package Menu;
+import Main.PT;
 
 import java.util.Scanner;
 
@@ -20,11 +21,11 @@ public class SceneManager {
         switch (i) {
             case 1:
                 System.out.println("선택하신 메뉴는 교육 입니다");
-                this.sceneState = new Edu();
+                //this.sceneState = new Edu();
                 break;
             case 2:
                 System.out.println("선택하신 메뉴는 알바 입니다");
-                this.sceneState = new AR();
+                //this.sceneState = new AR();
                 break;
             case 3:
                 System.out.println("선택하신 메뉴는 파티 입니다");
@@ -32,11 +33,11 @@ public class SceneManager {
                 break;
             case 4:
                 System.out.println("선택하신 메뉴는 외출 입니다");
-                this.sceneState = new Out();
+                //this.sceneState = new Out();
                 break;
             default:
                 System.out.println("선택하신 메뉴는 상태 입니다");
-                this.sceneState = new Status();
+                //this.sceneState = new Status();
         }
         this.sceneState. initialize();
     }
