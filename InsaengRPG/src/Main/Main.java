@@ -1,16 +1,12 @@
 package Main;
 
-import OBJ.User;
-
+import src.Menu.Status;
 public class Main {
     public static void main(String[] args) {
         ScanManager.Initialize();
 
         MainUpdate main = new MainUpdate();
         main.initialize();
-
-        User user = new User();
-        user.initialize();
 
 
         while(true)
@@ -20,3 +16,4 @@ public class Main {
         }
     }
 }
+

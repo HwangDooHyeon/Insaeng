@@ -10,7 +10,7 @@ public class MainUpdate {
 
     public void initialize() {
         ObjectManager.getInstance().initialize();
-        SceneManager.getInstance().setScene(0);
+        SceneManager.getInstance().setScene();
     }
 
     public void update() {
