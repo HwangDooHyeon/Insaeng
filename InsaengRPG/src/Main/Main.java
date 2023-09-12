@@ -1,18 +1,16 @@
-<<<<<<< Updated upstream
-package src.Main;
-=======
 package Main;
 
 import Menu.Scene;
 import Menu.Status;
 import OBJ.Item;
 import OBJ.User;
->>>>>>> Stashed changes
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        ScanManager.Initialize();
+
         MainUpdate main = new MainUpdate();
         main.initialize();
 
@@ -27,7 +25,6 @@ public class Main {
         status.render();
 
 
-        System.out.println(user.HP);
-
     }
 }
+

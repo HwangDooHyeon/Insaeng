@@ -1,4 +1,9 @@
 package Menu;
+import Main.*;
+import Main.AR;
+import Main.Edu;
+import Main.Out;
+import Main.PT;
 
 import java.util.Scanner;
 
@@ -15,17 +20,14 @@ public class SceneManager {
 
     private Scene sceneState = null;
 
-<<<<<<< Updated upstream
-    public void setScene(int i) {
-=======
     public void setScene() {
         int i = ScanManager.Scan();
->>>>>>> Stashed changes
 
         switch (i) {
             case 1:
                 System.out.println("선택하신 메뉴는 교육 입니다");
                 this.sceneState = new Edu();
+
                 break;
             case 2:
                 System.out.println("선택하신 메뉴는 알바 입니다");
@@ -41,9 +43,9 @@ public class SceneManager {
                 break;
             default:
                 System.out.println("선택하신 메뉴는 상태 입니다");
-                this.sceneState = new Status();
+                //this.sceneState = new Status();
         }
-        this.sceneState. initialize();
+        this.sceneState.initialize();
     }
 
     public void update() {
