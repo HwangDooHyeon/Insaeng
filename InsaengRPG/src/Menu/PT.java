@@ -1,9 +1,5 @@
 package Menu;
 
-import Main.User;
-
-import java.util.Scanner;
-
 public class PT {
     private Scanner scanner = null;
     private int input(){

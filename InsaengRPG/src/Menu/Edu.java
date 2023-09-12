@@ -1,5 +1,4 @@
 package Menu;
-import Main.User;
 
 import java.util.Scanner;
 
