@@ -1,7 +1,6 @@
 package Main;
 import Main.ObjectManager;
-import src.Menu.Scene;
-import src.OBJ.MyObject;
+import Menu.Scene;
 
 import java.util.Scanner;
 

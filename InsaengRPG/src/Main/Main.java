@@ -1,14 +1,17 @@
-package src.Main;
+package Main;
+
+import OBJ.User;
 
 public class Main {
     public static void main(String[] args) {
+        ScanManager.Initialize();
+
         MainUpdate main = new MainUpdate();
         main.initialize();
 
         User user = new User();
         user.initialize();
 
-        System.out.println(user.HP);
 
         while(true)
         {
