@@ -1,4 +1,6 @@
-package src.Main;
+package Main;
+
+import OBJ.User;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,7 +10,6 @@ public class Main {
         User user = new User();
         user.initialize();
 
-        System.out.println(user.HP);
 
         while(true)
         {
