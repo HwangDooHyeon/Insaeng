@@ -1,5 +1,6 @@
 package Menu;
 import Main.PT;
+import Main.ScanManager;
 
 import java.util.Scanner;
 
@@ -17,11 +18,12 @@ public class SceneManager {
     private Scene sceneState = null;
 
     public void setScene(int i) {
+        i = ScanManager.Scan();
 
         switch (i) {
             case 1:
                 System.out.println("선택하신 메뉴는 교육 입니다");
-                //this.sceneState = new Edu();
+                this.sceneState = new PT();
                 break;
             case 2:
                 System.out.println("선택하신 메뉴는 알바 입니다");
@@ -29,7 +31,7 @@ public class SceneManager {
                 break;
             case 3:
                 System.out.println("선택하신 메뉴는 파티 입니다");
-                this.sceneState = new PT();
+//                this.sceneState = new PT();
                 break;
             case 4:
                 System.out.println("선택하신 메뉴는 외출 입니다");
@@ -39,7 +41,7 @@ public class SceneManager {
                 System.out.println("선택하신 메뉴는 상태 입니다");
                 //this.sceneState = new Status();
         }
-        this.sceneState. initialize();
+        this.sceneState.initialize();
     }
 
     public void update() {

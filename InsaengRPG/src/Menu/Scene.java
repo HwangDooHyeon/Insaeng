@@ -8,7 +8,7 @@ public abstract class Scene {
         protected Object user = null;
 
 
-        public Scene(){ user = ObjectManager.getInstance().getUser();}
+        public Scene(){ user = ObjectManager.getInstance().getUser();        }
 
 
         public abstract void initialize();
