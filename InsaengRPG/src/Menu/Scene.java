@@ -1,12 +1,14 @@
 package Menu;
 
 import Main.ObjectManager;
+import OBJ.Item;
 import OBJ.Object;
 
 import java.util.Scanner;
 
 public abstract class Scene {
         protected Object user = null;
+        protected Item item = null;
         protected String printName;
         protected int money ,social, stress, moral, intel, art;
 

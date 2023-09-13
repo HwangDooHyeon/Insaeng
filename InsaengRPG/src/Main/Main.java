@@ -1,17 +1,22 @@
 package Main;
 
+import Menu.Intro;
 import Menu.SceneManager;
 
 public class Main {
     public static void main(String[] args) {
+        Intro i = new Intro();
+        i.intro();
+
         ScanManager.Initialize();
 
         MainUpdate main = new MainUpdate();
         main.initialize();
 
-        int mainTurn = SceneManager.getInstance().getTurn();
-        while(mainTurn > 0)
+
+        while(SceneManager.getInstance().getTurn() > 1)
         {
+            int mainTurn = SceneManager.getInstance().getTurn();
             mainTurn = --mainTurn;
             SceneManager.getInstance().setTurn(mainTurn);
             main.update();

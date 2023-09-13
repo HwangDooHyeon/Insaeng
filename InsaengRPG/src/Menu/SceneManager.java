@@ -45,9 +45,11 @@ public class SceneManager {
                 System.out.println("선택하신 메뉴는 외출 입니다");
                 this.sceneState = new Out();
                 break;
-            default:
+            case 5:
                 System.out.println("선택하신 메뉴는 상태 입니다");
                 this.sceneState = new Status();
+                break;
+
         }
         this.sceneState.initialize();
     }
@@ -58,7 +60,9 @@ public class SceneManager {
 
     public void render(){
         sceneState.render();
-        System.out.println("현재" + this.turn+"턴 남았습니다.");
+        System.out.println("현재" + turn+"턴 남았습니다.");
         System.out.println("===================================");
-   }
+        System.out.println("\n");
+        System.out.println("===================================");
+    }
 }

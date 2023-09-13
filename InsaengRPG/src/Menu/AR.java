@@ -47,9 +47,9 @@ public class AR extends Scene {
         int i = input();
 
         while(true) {
-            if(0 < i && i < 4)
+            if(0 < i && i < 4){
                 break;
-            else {
+            }else {
                 System.out.println("잘못입력하셨습니다");
                 i = input();
             }

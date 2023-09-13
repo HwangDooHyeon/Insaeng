@@ -17,6 +17,14 @@ public class ScanManager {
 
         try {
             // ** 사용자에게 입력 안내 메시지 출력
+            //System.out.println("===================================");
+            System.out.println("1. 학교");
+            System.out.println("2. 알바");
+            System.out.println("3. 파티");
+            System.out.println("4. 외출");
+            System.out.println("5. 상태확인");
+            System.out.println("===================================");
+
             System.out.print("매뉴를 선택해주세요: ");
 
             num = scanner.nextInt();

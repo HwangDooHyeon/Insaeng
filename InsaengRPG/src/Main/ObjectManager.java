@@ -17,7 +17,7 @@ public class ObjectManager {
     }
 
     Object user = null;
-    Object item = null;
+    Item item = null;
 
     public void initialize(){
         this.user = new User();
@@ -27,7 +27,7 @@ public class ObjectManager {
     public Object getUser() { return user;}
     public void setUser(Object user) { this.user = user;}
 
-    public Object getItem() { return item; }
-    public void setInstance(Object item) { this.item  = item; }
+    public Item getItem() { return item; }
+    public void setInstance(Item item) { this.item  = item; }
 
 }
