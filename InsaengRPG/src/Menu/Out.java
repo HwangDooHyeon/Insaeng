@@ -1,35 +1,82 @@
-package src.Menu;
+package Main;
+import Main.ObjectManager;
+import Menu.Scene;
 
 import java.util.Scanner;
 
-public class Out {
-    public static void printOut() {
-        while (true) {
-            System.out.println("1. 서점");
-            System.out.println("2. 금거래소");
-            System.out.println("3. 미술관");
-            System.out.println("4. 잡화점");
-            System.out.print("메뉴를 선택해주세요.: ");
+public class Out extends Scene {
+    private Scanner scanner = null;
+    private int input(){
+        int num = 0;
+        menuTxt();
 
-            Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.println("입력 : ");
+            num = scanner.nextInt();
+        }catch (Exception e){
+            System.out.println("에러");
+        }
 
-            int ar = scanner.nextInt();
+        return num;
+    }
 
-            if (ar == 1) {
-                System.out.println("선택하신 메뉴는 서점입니다");
+
+
+    public void menuTxt(){
+        System.out.println("====== 파티 종류를 선택해 주세요 ======");
+        System.out.println("1. 홈파티");
+        System.out.println("2. 마을잔치");
+        System.out.println("3. 왕국파티");
+        System.out.println("===================================");
+    }
+
+    @Override
+    public void initialize() {
+        this.user = ObjectManager.getInstance().getUser();
+        scanner = new Scanner(System.in);
+    }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void render() {
+        int i = input();
+
+        while(true) {
+            if(0 < i && i < 4)
                 break;
-            } else if (ar == 2) {
-                System.out.println("선택하신 메뉴는 금거래소 입니다");
-                break;
-            } else if (ar == 3) {
-                System.out.println("선택하신 메뉴는 미술관 입니다");
-                break;
-            } else if (ar == 4) {
-                System.out.println("선택하신 메뉴는 잡화점 입니다");
-                break;
-            } else {
-                System.out.println("잘못 선택하셨습니다. 다시 선택하세요.");
+            else {
+                System.out.println("잘못입력하셨습니다");
+                i = input();
             }
+        }
+
+
+        switch (i) {
+            case 1:
+                System.out.println("홈파티를 선택하셨습니다.");
+                System.out.println("돈 - 5\n" + "사교성 + 3\n" + "스트레스 + 2\n");
+                user.setSociability(user.getSociability() + 3);
+                user.setPTSD(user.getPTSD() + 2);
+                break;
+
+            case 2:
+                System.out.println("마을잔치를 선택하셨습니다.");
+                System.out.println("돈 - 10\n" + "사교성 + 5\n" + "스트레스 + 2\n");
+                user.setSociability(user.getSociability() + 5);
+                user.setPTSD(user.getPTSD() + 2);
+                break;
+
+            case 3:
+                System.out.println("왕국파티를 선택하셨습니다.");
+                System.out.println("돈 - 15\n" + "사교성 + 7\n" + "스트레스 + 2\n");
+                user.setSociability(user.getSociability() + 7);
+                user.setPTSD(user.getPTSD() + 2);
+                break;
         }
     }
 }
+
