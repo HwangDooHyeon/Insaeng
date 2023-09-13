@@ -85,6 +85,7 @@ public class PT extends Scene {
         user.setSociability(user.getSociability() + social);
         user.setPTSD(user.getPTSD() + stress);
 
+
     }
 
     @Override
