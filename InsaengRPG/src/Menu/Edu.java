@@ -100,7 +100,6 @@ public class Edu extends Scene {
             System.out.println(" 도덕성 +"+moral);
         }
         System.out.println("===================================");
-        SceneManager.getInstance().setScene();
     }
 }
 

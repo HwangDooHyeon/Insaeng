@@ -11,6 +11,13 @@ public class Out extends Scene {
     private String artMuseum = "미술관";
     private String generalStore = "잡화점";
 
+    String[][] strArray =new String[][]
+            {
+                    {"1. 구몬","2, 쏀수학","3. 전공서적"},
+                    {"1. 금", "2. 은 ","3. 다이아몬드"},
+                    {"1. Item1", "2. Item2","3. Item13"},
+                    {"1.이클립스 ", "2. 마카롱", "3. 막국수"},
+            };
 
     private int input(){
         int num = 0;
@@ -37,6 +44,13 @@ public class Out extends Scene {
         System.out.println("===================================");
     }
 
+
+    public String randItem(int id){
+        double dl = Math.random();
+        int ra = (int)(dl * 3);
+        return strArray[id - 1][ra];
+    }
+
     @Override
     public void initialize() {
         this.user = ObjectManager.getInstance().getUser();
@@ -59,28 +73,36 @@ public class Out extends Scene {
         switch (i) {
             case 1:
                 printName =  bookStore;  //서점
+                System.out.println(randItem(i));
                 //user.setIntel(user.getIntel() + intel);
                 break;
 
             case 2:
                 printName =  goldBar; //금거래소
+                System.out.println(randItem(i));
                 //user.setArtistry(user.getArtistry() + art);
                 break;
 
             case 3:
                 printName =  artMuseum; //미술관
+                System.out.println(randItem(i));
                 //user.setMorality(user.getMorality() + moral);
                 break;
             case 4:
                 printName =  generalStore; //잡화점
+                System.out.println(randItem(i));
                 //user.setMorality(user.getMorality() + moral);
                 break;
         }
 
-        user.setPTSD(user.getPTSD() - 1); //외출시 공통 스트레스 -1
-        //user.setPTSD(user.getPTSD() + stress);
-
     }
+
+//             user.setPTSD(user.getPTSD() - 1); //외출시 공통 스트레스 -1
+//            //user.setPTSD(user.getPTSD() + stress);
+//
+//}
+
+
 
     @Override
     public void render() {
@@ -88,8 +110,5 @@ public class Out extends Scene {
         System.out.println(printName+"를 선택하셨습니다.");
         //System.out.print("돈 -"+money + " 스트레스 +"+stress);
         System.out.println("===================================");
-
-        SceneManager.getInstance().setScene();
     }
 }
-

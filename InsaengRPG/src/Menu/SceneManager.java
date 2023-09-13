@@ -19,6 +19,11 @@ public class SceneManager {
     }
 
     private Scene sceneState = null;
+    public int turn = 24;
+
+    public int getTurn() {return turn; }
+
+    public void setTurn(int turn) { this.turn = turn; }
 
     public void setScene() {
         int i = ScanManager.Scan();
@@ -53,5 +58,7 @@ public class SceneManager {
 
     public void render(){
         sceneState.render();
-    }
+        System.out.println("현재" + this.turn+"턴 남았습니다.");
+        System.out.println("===================================");
+   }
 }
