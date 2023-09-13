@@ -67,7 +67,7 @@ public class AR extends Scene {
                 money = 3;
                 stress = 3;
                 moral = 5;
-                user.setMorality(user.getMorality() - moral);
+                user.setMorality(user.getMorality() + moral);
                 break;
 
             case 3:
@@ -81,7 +81,6 @@ public class AR extends Scene {
 
         user.setWealth(user.getWealth() + money);
         user.setPTSD(user.getPTSD() + stress);
-
     }
 
     @Override
@@ -89,11 +88,15 @@ public class AR extends Scene {
         System.out.println("===================================");
         System.out.println(printName+"를 선택하셨습니다.");
         System.out.print("돈 +"+money+ " 스트레스 +"+stress);
-        if(printName ==  silverTown || printName ==  background){
+
+        if(printName ==  silverTown){
+            System.out.println(" 도덕성 +"+moral);
+        }else if(printName ==  background){
             System.out.println(" 도덕성 -"+moral);
+        }else{
+            System.out.print("\n");
         }
         System.out.println("===================================");
-        SceneManager.getInstance().setScene();
     }
 }
 

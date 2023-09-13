@@ -91,7 +91,7 @@ public class PT extends Scene {
         System.out.println(printName+"를 선택하셨습니다.");
         System.out.println("돈 -"+money+ " 사교성 +"+social + "스트레스 +"+stress);
         System.out.println("===================================");
-        SceneManager.getInstance().setScene();
+
     }
 }
 
