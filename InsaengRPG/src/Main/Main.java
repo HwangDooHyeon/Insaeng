@@ -1,6 +1,5 @@
 package Main;
 
-
 public class Main {
     public static void main(String[] args) {
         ScanManager.Initialize();
@@ -8,11 +7,13 @@ public class Main {
         MainUpdate main = new MainUpdate();
         main.initialize();
 
+
         while(true)
         {
             main.update();
             main.render();
         }
+
     }
 }
 

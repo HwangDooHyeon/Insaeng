@@ -20,8 +20,6 @@ public class SceneManager {
 
     private Scene sceneState = null;
 
-
-
     public void setScene() {
         int i = ScanManager.Scan();
 

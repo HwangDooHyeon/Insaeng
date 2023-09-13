@@ -24,5 +24,6 @@ public class Status extends Scene {
         System.out.println("보유 골드: " + user.getWealth());
 
         SceneManager.getInstance().setScene();
+
     }
 }

@@ -8,16 +8,15 @@ public abstract class Object {
     public Object(){}
 
     public Object(String name, int Intel, int Wealth, int Sociability, int Morality, int Artistry, int PTSD) {
-        this.PTSD=MIN;
         this.Intel = MIN;
         this.Wealth = MIN;
         this.Sociability=MIN;
         this.Morality=MIN;
         this.Artistry=MIN;
+        this.PTSD=MIN;
     }
     final int MAX = 100;
     final int MIN = 0;
-
 
     public String getName() { return name; }
     public void setName(String name) {  this.name = name; }
@@ -43,6 +42,5 @@ public abstract class Object {
     public abstract void initialize();
     public abstract void update();
     public abstract void render();
-
 
 }
