@@ -10,9 +10,6 @@ public class Edu extends Scene {
     private String artSt = "미술수업";
     private String morSt = "도덕수업";
 
-    private String printName;
-    private int money ,social, stress, moral, intel, art ;
-
 
     private Scanner scanner = null;
     private int input(){
@@ -91,6 +88,7 @@ public class Edu extends Scene {
 
     @Override
     public void render() {
+        System.out.println("===================================");
         System.out.println(printName+"를 선택하셨습니다.");
         System.out.print("돈 -"+money + " 스트레스 +"+stress);
 
@@ -101,6 +99,7 @@ public class Edu extends Scene {
         }else if(printName ==  morSt){
             System.out.println(" 도덕성 +"+moral);
         }
+        System.out.println("===================================");
         SceneManager.getInstance().setScene();
     }
 }
