@@ -1,17 +1,23 @@
 package Main;
 import Main.ObjectManager;
 import Menu.Scene;
+import Menu.SceneManager;
 
 import java.util.Scanner;
 
 public class AR extends Scene {
-    private Scanner scanner = null;
+    private String farm = "농장";
+    private String silverTown = "양로원";
+    private String background = "뒷골목";
+
+
+
     private int input(){
         int num = 0;
         menuTxt();
 
         try {
-            System.out.println("입력 : ");
+            System.out.println("알바 종류 입력 : ");
             num = scanner.nextInt();
         }catch (Exception e){
             System.out.println("에러");
@@ -23,10 +29,10 @@ public class AR extends Scene {
 
 
     public void menuTxt(){
-        System.out.println("====== 파티 종류를 선택해 주세요 ======");
-        System.out.println("1. 홈파티");
-        System.out.println("2. 마을잔치");
-        System.out.println("3. 왕국파티");
+        System.out.println("====== 알바 장소를 선택해 주세요 ======");
+        System.out.println("1. "+farm);
+        System.out.println("2. "+silverTown);
+        System.out.println("3. "+background);
         System.out.println("===================================");
     }
 
@@ -38,11 +44,6 @@ public class AR extends Scene {
 
     @Override
     public void update() {
-
-    }
-
-    @Override
-    public void render() {
         int i = input();
 
         while(true) {
@@ -54,29 +55,45 @@ public class AR extends Scene {
             }
         }
 
-
         switch (i) {
             case 1:
-                System.out.println("홈파티를 선택하셨습니다.");
-                System.out.println("돈 - 5\n" + "사교성 + 3\n" + "스트레스 + 2\n");
-                user.setSociability(user.getSociability() + 3);
-                user.setPTSD(user.getPTSD() + 2);
+                printName =  farm;
+                money = 10;
+                stress = 7;
                 break;
 
             case 2:
-                System.out.println("마을잔치를 선택하셨습니다.");
-                System.out.println("돈 - 10\n" + "사교성 + 5\n" + "스트레스 + 2\n");
-                user.setSociability(user.getSociability() + 5);
-                user.setPTSD(user.getPTSD() + 2);
+                printName =  silverTown;
+                money = 3;
+                stress = 3;
+                moral = 5;
+                user.setMorality(user.getMorality() - moral);
                 break;
 
             case 3:
-                System.out.println("왕국파티를 선택하셨습니다.");
-                System.out.println("돈 - 15\n" + "사교성 + 7\n" + "스트레스 + 2\n");
-                user.setSociability(user.getSociability() + 7);
-                user.setPTSD(user.getPTSD() + 2);
+                printName =  background;
+                money = 30;
+                stress = 5;
+                moral = 10;
+                user.setMorality(user.getMorality() - moral);
                 break;
         }
+
+        user.setWealth(user.getWealth() + money);
+        user.setPTSD(user.getPTSD() + stress);
+
+    }
+
+    @Override
+    public void render() {
+        System.out.println("===================================");
+        System.out.println(printName+"를 선택하셨습니다.");
+        System.out.print("돈 +"+money+ " 스트레스 +"+stress);
+        if(printName ==  silverTown || printName ==  background){
+            System.out.println(" 도덕성 -"+moral);
+        }
+        System.out.println("===================================");
+        SceneManager.getInstance().setScene();
     }
 }
 
