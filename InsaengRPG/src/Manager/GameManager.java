@@ -14,9 +14,11 @@ public class GameManager {
         return instance;
     }
 
-    User user = new User();
+    User user = null;
 
-    public void initialize(){}
+    public void initialize(){
+        this.user = new User();
+    }
 
     public User getUser() { return user;}
     public void setUser(User user) { this.user = user;}

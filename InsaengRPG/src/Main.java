@@ -1,6 +1,7 @@
+import Scene.Ending;
+import Scene.Intro;
 import MainUpdate.MainUpdate;
 import Manager.*;
-import Scene.*;
 import Utility.ScanManager;
 
 public class Main {

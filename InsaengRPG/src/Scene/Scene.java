@@ -5,8 +5,8 @@ import Object.User;
 
 import java.util.Scanner;
 
-public abstract class Scene extends User{
-        protected User user;
+public abstract class Scene {
+        protected User user = null;
         protected int sceneIntel, sceneWealth, sceneSociability, sceneMorality, sceneArtistry, scenePTSD;
         protected String sceneName;
 
