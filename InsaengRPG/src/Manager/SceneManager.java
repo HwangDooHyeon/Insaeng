@@ -2,6 +2,7 @@ package Manager;
 import Scene.*;
 
 import Utility.ScanManager;
+import scene.Menu;
 
 public class SceneManager {
     private static SceneManager instance = null;
@@ -22,10 +23,13 @@ public class SceneManager {
 
     public void setTurn(int turn) { this.turn = turn; }
 
-    public void setScene() {
-        int i = ScanManager.Scan();
+    public void setScene(int Id) {
+//        int i = ScanManager.Scan();
 
-        switch (i) {
+        switch (Id) {
+            case 0:
+                sceneState = new Menu();
+                break;
             case 1:
                 System.out.println("선택하신 메뉴는 교육 입니다");
                 this.sceneState = new EducationCenter();
@@ -44,7 +48,12 @@ public class SceneManager {
                 break;
             case 5:
                 System.out.println("선택하신 메뉴는 상태 입니다");
-                this.sceneState = new Status();
+//                this.sceneState = new Status();
+                GameManager.getInstance().getUser().render();
+                GameManager.getInstance().getUser().statusUpdate();
+                break;
+            case 6:
+                sceneState = new Intro();
                 break;
 
         }
@@ -57,9 +66,5 @@ public class SceneManager {
 
     public void render(){
         sceneState.render();
-        System.out.println("현재" + turn+"턴 남았습니다.");
-        System.out.println("===================================");
-        System.out.println("\n");
-        System.out.println("===================================");
     }
 }

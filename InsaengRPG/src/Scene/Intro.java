@@ -1,8 +1,24 @@
 package Scene;
 
-public class Intro {
+import Manager.GameManager;
+import Manager.SceneManager;
 
-    public void intro() {
+public class Intro extends Scene{
+
+    @Override
+    public void initialize() {
+
+    }
+
+    @Override
+    public int update() {
+        SceneManager.getInstance().setScene(
+                GameManager.getInstance().menu );
+        return 0;
+    }
+
+    @Override
+    public void render() {
         System.out.println(
                 "~~~~~~~~~~~~~~~~~~~~~~~~~프린세스 메이커~~~~~~~~~~~~~~~~~~~~~~~~~\n"
                 + "\n"+
@@ -30,5 +46,4 @@ public class Intro {
                 + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
     }
-
 }
