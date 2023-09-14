@@ -10,7 +10,6 @@ public class EducationCenter extends Scene{
 
     @Override
     public int update() {
-
         switch (ScanManager.scanInt("입력 : "))
         {
             case 0:

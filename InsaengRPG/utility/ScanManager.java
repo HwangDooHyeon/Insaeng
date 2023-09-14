@@ -1,6 +1,5 @@
 package utility;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ScanManager {
@@ -20,13 +19,13 @@ public class ScanManager {
                 scanner.nextLine();
                 break;
             }
-            catch (InputMismatchException e ) {
+            catch (Exception e ) {
                 scanner.nextLine();
                 System.out.println("숫자를 입력해주세요.");
             }
         }
 
-        return scanner.nextInt();
+        return input;
     }
 
     public static int scanInt(String str){
@@ -39,7 +38,7 @@ public class ScanManager {
                 scanner.nextLine();
                 break;
             }
-            catch (InputMismatchException e ) {
+            catch (Exception e ) {
                 scanner.nextLine();
                 System.out.println("숫자를 입력해주세요.");
             }
