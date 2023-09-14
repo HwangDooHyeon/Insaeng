@@ -1,9 +1,6 @@
 package scene;
 
-import object.User;
-
 public class StatusCenter extends Scene {
-    public User user = null;
     @Override
     public void initialize() {
 
