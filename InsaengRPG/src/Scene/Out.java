@@ -134,19 +134,19 @@ public class Out extends Scene {
                     case 1:
                         render();
                         getArtMuseum_1();
-                        System.out.println("미술관 구경을 합니다.");
+                        System.out.println("미술관 주위를 구경합니다.");
                         System.out.println("===================================");
                         break;
                     case 2:
                         render();
                         getArtMuseum_2();
-                        System.out.println("미술관 을 합니다.");
+                        System.out.println("미술관 내부를 구경합니다.");
                         System.out.println("===================================");
                         break;
                     case 3:
                         render();
                         getArtMuseum_3();
-                        System.out.println("미술관 을 합니다.");
+                        System.out.println("미술품을 관람합니다.");
                         System.out.println("===================================");
                         break;
                 }

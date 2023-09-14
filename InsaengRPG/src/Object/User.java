@@ -4,21 +4,27 @@ import Manager.SceneManager;
 
 public class User {
 
-    int Intel, Wealth, Sociability, Morality, Artistry, PTSD;
+    final int MAX = 100;
+    final int MIN = 30;
+
+    int Intel = MIN;
+    int Wealth = MIN;
+    int Sociability = MIN;
+    int Morality = MIN;
+    int Artistry = MIN;
+    int PTSD = MIN;
 
     public User(){}
 
     public User(int Intel, int Wealth, int Sociability, int Morality, int Artistry, int PTSD) {
-        this.Intel = MIN;
-        this.Wealth = MIN;
-        this.Sociability=MIN;
-        this.Morality=MIN;
-        this.Artistry=MIN;
-        this.PTSD=MIN;
+        this.Intel = Intel;
+        this.Wealth = Wealth;
+        this.Sociability=Sociability;
+        this.Morality=Morality;
+        this.Artistry=Artistry;
+        this.PTSD=PTSD;
     }
 
-    final int MAX = 100;
-    final int MIN = 0;
 
     public int getIntel() { return Intel; }
     public void setIntel(int intel) { this.Intel = intel; }
