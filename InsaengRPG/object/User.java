@@ -11,7 +11,7 @@ public class User {
     // 랜덤수치
 
     // getter & setter
-    
+
     public void initialize(){
 
     }

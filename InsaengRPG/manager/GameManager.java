@@ -11,13 +11,8 @@ public class GameManager {
         return instance;
     }
 
-    public final int 로고 = 0;
-    public final int 매뉴 = 1;
-    public final int 교육 = 2;
-    public final int 알바 = 3;
-    public final int 파티 = 4;
-    public final int 외출 = 5;
-    public final int 상태 = 6;
+    public final int 매뉴 = 0;
+    public final int 로고 = 6;
 
     private User user = null;
 

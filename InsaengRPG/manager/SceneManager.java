@@ -19,31 +19,32 @@ public class SceneManager {
         switch (id)
         {
             case 0:
-                sceneState = new Logo();
-                break;
-
-            case 1:
                 sceneState = new Menu();
                 break;
 
-            case 2:
+            case 1:
                 sceneState = new EducationCenter();
                 break;
 
-            case 3:
+            case 2:
                 // sceneState = new 알바();
                 break;
 
-            case 4:
+            case 3:
                 // sceneState = new 파티장();
                 break;
 
-            case 5:
+            case 4:
                 // sceneState = new 외출();
                 break;
 
-            case 6:
+            case 5:
                 // sceneState = new 상태확인();
+                GameManager.getInstance().getUser().render();
+                break;
+
+            case 6:
+                sceneState = new Logo();
                 break;
         }
         sceneState.initialize();
