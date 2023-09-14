@@ -22,6 +22,8 @@ public class Party extends Scene{
     @Override
     public int update() {
 
+        menuTxt();
+
         switch (ScanManager.scanInt("입력 : "))
         {
             case 1:
