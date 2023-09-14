@@ -1,5 +1,6 @@
 package utility;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ScanManager {
@@ -17,9 +18,11 @@ public class ScanManager {
                 System.out.print("입력 : ");
                 input = scanner.nextInt();
                 scanner.nextLine();
-                break;
+
+                if(!(0 < input && input < 6))
+                    System.out.println("1 ~ 5 사이의 값을 입력해 주세요.");
             }
-            catch (Exception e ) {
+            catch (InputMismatchException e ) {
                 scanner.nextLine();
                 System.out.println("숫자를 입력해주세요.");
             }
@@ -36,9 +39,11 @@ public class ScanManager {
                 System.out.print(str);
                 input = scanner.nextInt();
                 scanner.nextLine();
-                break;
+
+                if(!(0 < input && input < 6))
+                    System.out.println("1 ~ 5 사이의 값을 입력해 주세요.");
             }
-            catch (Exception e ) {
+            catch (InputMismatchException e ) {
                 scanner.nextLine();
                 System.out.println("숫자를 입력해주세요.");
             }
