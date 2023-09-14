@@ -8,8 +8,8 @@ public class Main {
 
         while(true)
         {
-            main.update();
             main.render();
+            main.update();
         }
     }
 }

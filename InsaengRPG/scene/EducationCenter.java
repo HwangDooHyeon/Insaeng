@@ -24,7 +24,9 @@ public class EducationCenter extends Scene{
 
     @Override
     public int update() {
+
         menuTxt();
+
         switch (ScanManager.scanInt("입력 : "))
         {
             case 1:
@@ -59,6 +61,7 @@ public class EducationCenter extends Scene{
 
     @Override
     public void render() {
+
         System.out.println("===================================");
         System.out.println(sceneName+"를 선택하셨습니다.");
         System.out.print("돈 -"+ sceneWealth + " 스트레스 +"+scenePTSD);
@@ -72,15 +75,6 @@ public class EducationCenter extends Scene{
         }
         System.out.println("===================================");
 
+
     }
 }
-
-
-
-
-
-
-
-
-
-
