@@ -11,7 +11,6 @@ public class Logo extends Scene{
     public int update() {
         SceneManager.getInstance().setScene(
                 GameManager.getInstance().매뉴 );
-
         return 0;
     }
 

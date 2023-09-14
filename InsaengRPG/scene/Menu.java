@@ -13,11 +13,6 @@ public class Menu extends Scene{
     @Override
     public int update() {
         int id = ScanManager.scanInt();
-
-        while(id < 1 || 5 < id ) {
-            id = ScanManager.scanInt();
-        }
-
         SceneManager.getInstance().setScene(id);
 
         return 0;
