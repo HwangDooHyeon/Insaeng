@@ -28,8 +28,8 @@ public class EducationCenter extends Scene{
     @Override
     public void render() {
         System.out.println("1. 수학");
-        System.out.println("2. 수학");
-        System.out.println("3. 수학");
+        System.out.println("2. 미술");
+        System.out.println("3. 도덕");
     }
 }
 
