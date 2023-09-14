@@ -15,6 +15,8 @@ public class GameManager {
     }
 
     User user = null;
+    public final int menu = 0;
+    public final int intro = 6;
 
     public void initialize(){
         this.user = new User();

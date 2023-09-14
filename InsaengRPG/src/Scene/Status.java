@@ -9,10 +9,11 @@ public class Status extends Scene {
     public void initialize(){}
 
     @Override
-    public void update() {
+    public int update() {
         int turn = SceneManager.getInstance().getTurn();
         turn +=1;
         SceneManager.getInstance().setTurn(turn);
+        return 0;
     }
 
     @Override

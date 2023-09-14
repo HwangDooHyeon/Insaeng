@@ -1,5 +1,7 @@
 package Object;
 
+import Manager.SceneManager;
+
 public class User {
 
     int Intel, Wealth, Sociability, Morality, Artistry, PTSD;
@@ -37,5 +39,24 @@ public class User {
     public void setPTSD(int PTSD) { this.PTSD = PTSD; }
 
 
+    public int statusUpdate(){
+        int turn = SceneManager.getInstance().getTurn();
+        turn +=1;
+        SceneManager.getInstance().setTurn(turn);
+        return 0;
+    }
+
+    public void render(){
+        // 상태확인
+        System.out.println("===================================");
+        System.out.println("돈 : " + getWealth());
+        System.out.println("지성 : " +getIntel());
+        System.out.println("스트레스 : " + getPTSD());
+        System.out.println("도덕성 : " + getMorality());
+        System.out.println("사교성 : "+ getSociability());
+        System.out.println("예술성 : " + getArtistry());
+        //System.out.println("랜덤수치 : ");
+        System.out.println("===================================");
+    }
 
 }

@@ -61,7 +61,7 @@ public class Out extends Scene {
 
 
     @Override
-    public void update() {
+    public int update() {
         int i = input();
 
         while(true) {
@@ -175,6 +175,7 @@ public class Out extends Scene {
                 }
                     break;
         }
+        return 0;
 
     }
 

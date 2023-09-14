@@ -35,6 +35,21 @@ public class EducationCenter extends Scene {
         System.out.println("===================================");
     }
 
+    public void renderTxt(){
+        System.out.println("===================================");
+        System.out.println(sceneName+"를 선택하셨습니다.");
+        System.out.print("돈 -"+sceneWealth + " 스트레스 +"+scenePTSD);
+
+        if(sceneName ==  mathSt){
+            System.out.println(" 사교성 +"+sceneSociability);
+        }else if(sceneName ==  artSt){
+            System.out.println(" 예술성 +"+sceneArtistry);
+        }else if(sceneName ==  morSt){
+            System.out.println(" 도덕성 +"+sceneMorality);
+        }
+        System.out.println("===================================");
+    }
+
     @Override
     public void initialize() {
         this.user = GameManager.getInstance().getUser();
@@ -42,7 +57,7 @@ public class EducationCenter extends Scene {
     }
 
     @Override
-    public void update() {
+    public int update() {
         int i = input();
 
         while(true) {
@@ -62,12 +77,17 @@ public class EducationCenter extends Scene {
                     sceneIntel = 5;
                     sceneWealth = 5;
                     scenePTSD = 5;
+
+                    user.setWealth(user.getWealth() - sceneWealth);
+                    user.setPTSD(user.getPTSD() + scenePTSD);
+                    user.setIntel(user.getIntel() + sceneIntel);
+                    renderTxt();
                 }
                 else{
                     System.out.println("소지 골드가 부족합니다.");
-                    SceneManager.getInstance().setScene();
+//                    SceneManager.getInstance().setScene(GameManager.getInstance().menu);
                 }
-                user.setIntel(user.getIntel() + sceneIntel);
+
                 break;
 
             case 2:
@@ -76,12 +96,17 @@ public class EducationCenter extends Scene {
                     sceneArtistry = 3;
                     sceneWealth = 7;
                     scenePTSD = 2;
+
+                    user.setWealth(user.getWealth() - sceneWealth);
+                    user.setPTSD(user.getPTSD() + scenePTSD);
+                    user.setArtistry(user.getArtistry() + sceneArtistry);
+                    renderTxt();
                 }
                 else{
                     System.out.println("소지 골드가 부족합니다.");
-                    SceneManager.getInstance().setScene();
+//                    SceneManager.getInstance().setScene(GameManager.getInstance().menu);
                 }
-                user.setArtistry(user.getArtistry() + sceneArtistry);
+
                 break;
 
             case 3:
@@ -90,33 +115,27 @@ public class EducationCenter extends Scene {
                     sceneMorality = 3;
                     sceneWealth = -3;
                     scenePTSD = 3;
+
+                    user.setWealth(user.getWealth() - sceneWealth);
+                    user.setPTSD(user.getPTSD() + scenePTSD);
+                    user.setMorality(user.getMorality() + sceneMorality);
+                    renderTxt();
                 }
                 else{
                     System.out.println("소지 골드가 부족합니다.");
-                    SceneManager.getInstance().setScene();
+//                    SceneManager.getInstance().setScene(GameManager.getInstance().menu);
                 }
-                user.setMorality(user.getMorality() + sceneMorality);
+
                 break;
         }
 
-        user.setWealth(user.getWealth() - sceneWealth);
-        user.setPTSD(user.getPTSD() + scenePTSD);
+        SceneManager.getInstance().setScene(GameManager.getInstance().menu);
 
+        return 0;
     }
 
     @Override
     public void render() {
-        System.out.println("===================================");
-        System.out.println(sceneName+"를 선택하셨습니다.");
-        System.out.print("돈 -"+sceneWealth + " 스트레스 +"+scenePTSD);
 
-        if(sceneName ==  mathSt){
-            System.out.println(" 사교성 +"+sceneSociability);
-        }else if(sceneName ==  artSt){
-            System.out.println(" 예술성 +"+sceneArtistry);
-        }else if(sceneName ==  morSt){
-            System.out.println(" 도덕성 +"+sceneMorality);
-        }
-        System.out.println("===================================");
     }
 }

@@ -1,5 +1,6 @@
 package Scene;
 import Manager.GameManager;
+import Manager.SceneManager;
 import Scene.Scene;
 
 import java.util.Scanner;
@@ -35,6 +36,21 @@ public class ParttimeJob extends Scene {
         System.out.println("===================================");
     }
 
+    public void renderTxt(){
+        System.out.println("===================================");
+        System.out.println(sceneName+"를 선택하셨습니다.");
+        System.out.print("돈 +"+sceneWealth+ " 스트레스 +"+scenePTSD);
+
+        if(sceneName ==  silverTown){
+            System.out.println(" 도덕성 +"+sceneMorality);
+        }else if(sceneName ==  background){
+            System.out.println(" 도덕성 -"+sceneMorality);
+        }else{
+            System.out.print("\n");
+        }
+        System.out.println("===================================");
+    }
+
     @Override
     public void initialize() {
         this.user = GameManager.getInstance().getUser();
@@ -42,7 +58,7 @@ public class ParttimeJob extends Scene {
     }
 
     @Override
-    public void update() {
+    public int update() {
         int i = input();
 
         while(true) {
@@ -80,22 +96,15 @@ public class ParttimeJob extends Scene {
 
         user.setWealth(user.getWealth() + sceneWealth);
         user.setPTSD(user.getPTSD() + scenePTSD);
+        renderTxt();
+        SceneManager.getInstance().setScene(GameManager.getInstance().menu);
+
+        return 0;
     }
 
     @Override
     public void render() {
-        System.out.println("===================================");
-        System.out.println(sceneName+"를 선택하셨습니다.");
-        System.out.print("돈 +"+sceneWealth+ " 스트레스 +"+scenePTSD);
 
-        if(sceneName ==  silverTown){
-            System.out.println(" 도덕성 +"+sceneMorality);
-        }else if(sceneName ==  background){
-            System.out.println(" 도덕성 -"+sceneMorality);
-        }else{
-            System.out.print("\n");
-        }
-        System.out.println("===================================");
     }
 }
 

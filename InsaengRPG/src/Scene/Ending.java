@@ -8,7 +8,9 @@ public class Ending extends Scene{
     public void initialize() {this.user = GameManager.getInstance().getUser();}
 
     @Override
-    public void update() {}
+    public int update() {
+        return 0;
+    }
 
     @Override
     public void render() {

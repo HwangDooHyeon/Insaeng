@@ -42,7 +42,7 @@ public class Party extends Scene {
     }
 
     @Override
-    public void update() {
+    public int update() {
         int i = input();
 
         while(true) {
@@ -64,7 +64,7 @@ public class Party extends Scene {
                 }
                 else{
                     System.out.println("소지 골드가 부족합니다.");
-                    SceneManager.getInstance().setScene();
+//                    SceneManager.getInstance().setScene();
                 }
                 break;
 
@@ -77,7 +77,7 @@ public class Party extends Scene {
                 }
                 else{
                     System.out.println("소지 골드가 부족합니다.");
-                    SceneManager.getInstance().setScene();
+//                    SceneManager.getInstance().setScene();
                 }
                 break;
 
@@ -90,7 +90,7 @@ public class Party extends Scene {
                 }
                 else{
                     System.out.println("소지 골드가 부족합니다.");
-                    SceneManager.getInstance().setScene();
+//                    SceneManager.getInstance().setScene();
                 }
                 break;
         }
@@ -99,7 +99,7 @@ public class Party extends Scene {
         user.setSociability(user.getSociability() + sceneSociability);
         user.setPTSD(user.getPTSD() + scenePTSD);
 
-
+        return 0;
     }
 
     @Override
