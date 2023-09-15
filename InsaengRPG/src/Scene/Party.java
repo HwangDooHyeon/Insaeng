@@ -16,28 +16,28 @@ public class Party extends Scene {
         menuTxt();
 
         try {
-            System.out.println("파티 종류 입력 : ");
+            System.out.print("                                          파티 종류 입력 : ");
             num = scanner.nextInt();
         }catch (Exception e){
-            System.out.println("에러");
+            System.out.println("                                              에러");
         }
 
         return num;
     }
 
     public void renderTxt() {
-        System.out.println("===================================");
-        System.out.println(sceneName + "를 선택하셨습니다.");
-        System.out.println("돈 -" + sceneWealth + " 사교성 +" + sceneSociability + "스트레스 +" + scenePTSD);
-        System.out.println("===================================");
+        System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺");
+        System.out.println("                                      "+sceneName + "를 선택하셨습니다.");
+        System.out.println("                                      돈 -" + sceneWealth + " 사교성 +" + sceneSociability + "스트레스 +" + scenePTSD);
+        System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺");
     }
 
     public void menuTxt(){
-        System.out.println("====== 파티 종류를 선택해 주세요 ======");
-        System.out.println("1. "+homeParty);
-        System.out.println("2. "+villageParty);
-        System.out.println("3. "+kingdomParty);
-        System.out.println("===================================");
+        System.out.println("                                ༻✦༺ 　༻파티 종류를 선택해 주세요༺　༻✦༺");
+        System.out.println("                                          1. "+homeParty);
+        System.out.println("                                          2. "+villageParty);
+        System.out.println("                                          3. "+kingdomParty);
+        System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺");
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Party extends Scene {
             if(0 < i && i < 4)
                 break;
             else {
-                System.out.println("잘못입력하셨습니다");
+                System.out.println("                                         잘 못 입력하셨습니다");
                 i = input();
             }
         }
@@ -69,8 +69,8 @@ public class Party extends Scene {
                     renderTxt();
                 }
                 else{
-                    System.out.println("소지 골드가 부족합니다.");
-//                    SceneManager.getInstance().setScene();
+                    System.out.println("                                          소지 골드가 부족합니다.");
+                    GameManager.getInstance().getUser().turnUp();
                 }
                 break;
 
@@ -83,8 +83,8 @@ public class Party extends Scene {
                     renderTxt();
                 }
                 else{
-                    System.out.println("소지 골드가 부족합니다.");
-//                    SceneManager.getInstance().setScene();
+                    System.out.println("                                          소지 골드가 부족합니다.");
+                    GameManager.getInstance().getUser().turnUp();
                 }
                 break;
 
@@ -97,8 +97,8 @@ public class Party extends Scene {
                     renderTxt();
                 }
                 else{
-                    System.out.println("소지 골드가 부족합니다.");
-//                    SceneManager.getInstance().setScene();
+                    System.out.println("                                          소지 골드가 부족합니다.");
+                    GameManager.getInstance().getUser().turnUp();
                 }
                 break;
         }
@@ -106,7 +106,9 @@ public class Party extends Scene {
         user.setWealth(user.getWealth() - sceneWealth);
         user.setSociability(user.getSociability() + sceneSociability);
         user.setPTSD(user.getPTSD() + scenePTSD);
+        SceneManager.getInstance().setScene(GameManager.getInstance().menu);
         GameManager.getInstance().getUser().turnRender();
+
         return 0;
     }
 

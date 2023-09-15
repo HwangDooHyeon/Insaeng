@@ -20,10 +20,10 @@ public class Menu extends Scene {
 
     @Override
     public void render() {
-        System.out.println("1. 교육");
-        System.out.println("2. 알바");
-        System.out.println("3. 파티");
-        System.out.println("4. 외출");
-        System.out.println("5. 상태");
+        System.out.println("                                              1. 학교");
+        System.out.println("                                              2. 알바");
+        System.out.println("                                              3. 파티");
+        System.out.println("                                              4. 외출");
+        System.out.println("                                              5. 상태");
     }
 }
