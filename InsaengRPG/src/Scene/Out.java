@@ -175,6 +175,7 @@ public class Out extends Scene {
                 }
                     break;
         }
+        GameManager.getInstance().getUser().turnRender();
         return 0;
 
     }

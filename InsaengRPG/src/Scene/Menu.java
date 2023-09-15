@@ -1,4 +1,4 @@
-package scene;
+package Scene;
 
 import Manager.SceneManager;
 import Scene.Scene;

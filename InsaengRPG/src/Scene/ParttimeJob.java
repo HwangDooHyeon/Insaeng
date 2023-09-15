@@ -75,6 +75,7 @@ public class ParttimeJob extends Scene {
                 sceneName =  farm;
                 sceneWealth = 10;
                 scenePTSD = 7;
+
                 break;
 
             case 2:
@@ -98,7 +99,7 @@ public class ParttimeJob extends Scene {
         user.setPTSD(user.getPTSD() + scenePTSD);
         renderTxt();
         SceneManager.getInstance().setScene(GameManager.getInstance().menu);
-
+        GameManager.getInstance().getUser().turnRender();
         return 0;
     }
 

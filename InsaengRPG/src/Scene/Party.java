@@ -25,7 +25,12 @@ public class Party extends Scene {
         return num;
     }
 
-
+    public void renderTxt() {
+        System.out.println("===================================");
+        System.out.println(sceneName + "를 선택하셨습니다.");
+        System.out.println("돈 -" + sceneWealth + " 사교성 +" + sceneSociability + "스트레스 +" + scenePTSD);
+        System.out.println("===================================");
+    }
 
     public void menuTxt(){
         System.out.println("====== 파티 종류를 선택해 주세요 ======");
@@ -61,6 +66,7 @@ public class Party extends Scene {
                     sceneWealth = 5;
                     sceneSociability = 3;
                     scenePTSD = 2;
+                    renderTxt();
                 }
                 else{
                     System.out.println("소지 골드가 부족합니다.");
@@ -74,6 +80,7 @@ public class Party extends Scene {
                     sceneWealth = 10;
                     sceneSociability = 5;
                     scenePTSD = 2;
+                    renderTxt();
                 }
                 else{
                     System.out.println("소지 골드가 부족합니다.");
@@ -87,6 +94,7 @@ public class Party extends Scene {
                     sceneWealth = 15;
                     sceneSociability = 7;
                     scenePTSD = 2;
+                    renderTxt();
                 }
                 else{
                     System.out.println("소지 골드가 부족합니다.");
@@ -98,16 +106,13 @@ public class Party extends Scene {
         user.setWealth(user.getWealth() - sceneWealth);
         user.setSociability(user.getSociability() + sceneSociability);
         user.setPTSD(user.getPTSD() + scenePTSD);
-
+        GameManager.getInstance().getUser().turnRender();
         return 0;
     }
 
     @Override
     public void render() {
-        System.out.println("===================================");
-        System.out.println(sceneName+"를 선택하셨습니다.");
-        System.out.println("돈 -"+sceneWealth+ " 사교성 +"+sceneSociability + "스트레스 +"+scenePTSD);
-        System.out.println("===================================");
+
 
     }
 }

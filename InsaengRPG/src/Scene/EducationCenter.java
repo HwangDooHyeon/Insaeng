@@ -41,7 +41,7 @@ public class EducationCenter extends Scene {
         System.out.print("돈 -"+sceneWealth + " 스트레스 +"+scenePTSD);
 
         if(sceneName ==  mathSt){
-            System.out.println(" 사교성 +"+sceneSociability);
+            System.out.println(" 지성 +"+sceneIntel);
         }else if(sceneName ==  artSt){
             System.out.println(" 예술성 +"+sceneArtistry);
         }else if(sceneName ==  morSt){
@@ -130,7 +130,7 @@ public class EducationCenter extends Scene {
         }
 
         SceneManager.getInstance().setScene(GameManager.getInstance().menu);
-
+        GameManager.getInstance().getUser().turnRender();
         return 0;
     }
 
