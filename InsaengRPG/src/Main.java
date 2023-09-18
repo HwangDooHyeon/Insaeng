@@ -20,7 +20,6 @@ public class Main {
             main.render();
             main.update();
 
-
         }
 
         Scene e  = new Ending();

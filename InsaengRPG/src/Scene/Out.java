@@ -9,6 +9,7 @@ public class Out extends Scene {
     private String goldBar = "금거래소";
     private String artMuseum = "미술관";
     private String generalStore = "잡화점";
+    private String mainMenu = "메인";
 
     private int goomonBook = 3;
     private int ssenBook = 5;
@@ -37,10 +38,11 @@ public class Out extends Scene {
     public void menuTxt(){
         System.out.println("                                   ༻✦༺ 　༺༻매장을 선택해 주세요༺༻　༻✦༺");
         System.out.println("                              ༻✦༺　༺༻ 보유 골드: " + user.getWealth() + " 필요 골드: " + eraseWealth + " ༺༻　༻✦༺");
-        System.out.println("                                              1. "+bookStore);
-        System.out.println("                                              2. "+goldBar);
-        System.out.println("                                              3. "+artMuseum);
-        System.out.println("                                              4. "+generalStore);
+        System.out.println("                                        1. "+bookStore);
+        System.out.println("                                        2. "+goldBar);
+        System.out.println("                                        3. "+artMuseum);
+        System.out.println("                                        4. "+generalStore);
+        System.out.println("                                        5. "+mainMenu);
         System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
     }
 
@@ -74,7 +76,7 @@ public class Out extends Scene {
         int i = input();
 
         while(true) {
-            if(0 < i && i < 5)
+            if(0 < i && i < 6)
                 break;
             else {
                 System.out.println("                                         잘 못 입력하셨습니다");
@@ -186,6 +188,13 @@ public class Out extends Scene {
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                     }
+                    break;
+
+                case 5:
+                    sceneName = mainMenu;
+                    System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                    System.out.println("                                         "+sceneName + "를 선택하셨습니다.");
+                    GameManager.getInstance().getUser().turnUp();
                     break;
             }
 

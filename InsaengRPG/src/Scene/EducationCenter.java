@@ -129,7 +129,7 @@ public class EducationCenter extends Scene {
                 sceneName = mainMenu;
                 System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                 System.out.println("                                         "+sceneName + "를 선택하셨습니다.");
-                SceneManager.getInstance().setScene(GameManager.getInstance().menu);
+                GameManager.getInstance().getUser().turnUp();
                 break;
         }
         SceneManager.getInstance().setScene(GameManager.getInstance().menu);
