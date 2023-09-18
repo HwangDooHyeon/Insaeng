@@ -1,5 +1,6 @@
 package Scene;
 
+import Manager.GameManager;
 import Manager.SceneManager;
 import Scene.Scene;
 import Utility.ScanManager;
@@ -13,8 +14,8 @@ public class Menu extends Scene {
     @Override
     public int update() {
         int id = ScanManager.Scan();
+        GameManager.getInstance().getUser().turnUp();
         SceneManager.getInstance().setScene(id);
-
         return 0;
     }
 

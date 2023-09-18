@@ -29,7 +29,7 @@ public class SceneManager {
         switch (Id) {
             case 0:
                 sceneState = new Menu();
-                GameManager.getInstance().getUser().turnUp();
+//                GameManager.getInstance().getUser().turnUp();
                 break;
 
             case 1:
@@ -55,7 +55,7 @@ public class SceneManager {
             case 5:
                 System.out.println("                                           상태확인을 합니다.");
                 GameManager.getInstance().getUser().render();
-                GameManager.getInstance().getUser().turnUp();
+//                GameManager.getInstance().getUser().turnUp();
                 GameManager.getInstance().getUser().turnRender();
                 break;
 

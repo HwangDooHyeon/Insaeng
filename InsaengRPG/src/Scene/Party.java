@@ -8,6 +8,7 @@ public class Party extends Scene {
     private String homeParty = "홈파티";
     private String villageParty = "마을잔치";
     private String kingdomParty = "왕궁파티";
+    private String mainMenu = "메인";
 
 
 
@@ -34,9 +35,10 @@ public class Party extends Scene {
 
     public void menuTxt(){
         System.out.println("                                   ༻✦༺ 　༻파티 종류를 선택해 주세요༺　༻✦༺");
-        System.out.println("                                              1. "+homeParty);
-        System.out.println("                                              2. "+villageParty);
-        System.out.println("                                              3. "+kingdomParty);
+        System.out.println("                                              1. "+homeParty + " (필요 골드: " + "-5)");
+        System.out.println("                                              2. "+villageParty + " (필요 골드: " + "-10)");
+        System.out.println("                                              3. "+kingdomParty + " (필요 골드: " + "-15)");
+        System.out.println("                                              4. "+mainMenu);
         System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
     }
 
@@ -51,7 +53,7 @@ public class Party extends Scene {
         int i = input();
 
         while(true) {
-            if(0 < i && i < 4)
+            if(0 < i && i < 5)
                 break;
             else {
                 System.out.println("                                         잘 못 입력하셨습니다");
@@ -61,7 +63,7 @@ public class Party extends Scene {
 
         switch (i) {
             case 1:
-                if(user.getWealth()-5>0){
+                if(user.getWealth()-5>-1){
                     sceneName =  homeParty;
                     sceneWealth = 5;
                     sceneSociability = 3;
@@ -75,7 +77,7 @@ public class Party extends Scene {
                 break;
 
             case 2:
-                if(user.getWealth()-10>0){
+                if(user.getWealth()-10>-1){
                     sceneName =  villageParty;
                     sceneWealth = 10;
                     sceneSociability = 5;
@@ -89,7 +91,7 @@ public class Party extends Scene {
                 break;
 
             case 3:
-                if(user.getWealth()-15>0){
+                if(user.getWealth()-15>-1){
                     sceneName =  kingdomParty;
                     sceneWealth = 15;
                     sceneSociability = 7;
@@ -100,6 +102,12 @@ public class Party extends Scene {
                     System.out.println("                                          소지 골드가 부족합니다.");
                     GameManager.getInstance().getUser().turnUp();
                 }
+                break;
+            case 4:
+                sceneName = mainMenu;
+                System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                System.out.println("                                         "+sceneName + "를 선택하셨습니다.");
+                GameManager.getInstance().getUser().turnUp();
                 break;
         }
 
