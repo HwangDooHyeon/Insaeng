@@ -27,17 +27,23 @@ public class Party extends Scene {
     }
 
     public void renderTxt() {
-        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-        System.out.println("                                      "+sceneName+" 을(를) 선택하셨습니다.");
-        System.out.println("                                      돈 -" + sceneWealth + " 사교성 +" + sceneSociability + " 스트레스 +" + scenePTSD);
-        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+
+        try {
+            System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+            System.out.println("                                       "+sceneName+" 을(를) 선택하셨습니다.");
+            Thread.sleep(1000);
+            System.out.println("                                       돈 -" + sceneWealth + " 사교성 +" + sceneSociability + " 스트레스 +" + scenePTSD);
+            System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+
+        } catch (InterruptedException e) {e.printStackTrace();}
+
     }
 
     public void menuTxt(){
         System.out.println("                                   ༻✦༺ 　༻파티 종류를 선택해 주세요༺　༻✦༺");
-        System.out.println("                                              1. "+homeParty + " (필요 골드: " + "-5)");
-        System.out.println("                                              2. "+villageParty + " (필요 골드: " + "-10)");
-        System.out.println("                                              3. "+kingdomParty + " (필요 골드: " + "-15)");
+        System.out.println("                                              1. "+homeParty);
+        System.out.println("                                              2. "+villageParty);
+        System.out.println("                                              3. "+kingdomParty);
         System.out.println("                                              4. "+mainMenu);
         System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
     }
@@ -63,7 +69,7 @@ public class Party extends Scene {
 
         switch (i) {
             case 1:
-                if(user.getWealth()-5>-1){
+                if(user.getWealth()-5>0){
                     sceneName =  homeParty;
                     sceneWealth = 5;
                     sceneSociability = 3;
@@ -77,7 +83,7 @@ public class Party extends Scene {
                 break;
 
             case 2:
-                if(user.getWealth()-10>-1){
+                if(user.getWealth()-10>0){
                     sceneName =  villageParty;
                     sceneWealth = 10;
                     sceneSociability = 5;
@@ -91,7 +97,7 @@ public class Party extends Scene {
                 break;
 
             case 3:
-                if(user.getWealth()-15>-1){
+                if(user.getWealth()-15>0){
                     sceneName =  kingdomParty;
                     sceneWealth = 15;
                     sceneSociability = 7;
@@ -107,8 +113,10 @@ public class Party extends Scene {
                 sceneName = mainMenu;
                 System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                 System.out.println("                                         "+sceneName + "를 선택하셨습니다.");
+                System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                 GameManager.getInstance().getUser().turnUp();
                 break;
+
         }
 
         user.setWealth(user.getWealth() - sceneWealth);

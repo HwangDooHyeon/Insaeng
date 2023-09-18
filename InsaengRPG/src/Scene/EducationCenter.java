@@ -37,9 +37,15 @@ public class EducationCenter extends Scene {
     }
 
     public void renderTxt() {
-        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-        System.out.println("                                        "+sceneName+" 을(를) 선택하셨습니다.");
-        System.out.print("                                        돈 -"+sceneWealth + " 스트레스 +"+scenePTSD);
+        try {
+            System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+            System.out.println("                                        "+sceneName+" 을(를) 선택하셨습니다.");
+            Thread.sleep(1000);
+            System.out.print("                                        돈 -"+sceneWealth + " 스트레스 +"+scenePTSD);
+
+        } catch (InterruptedException e) {e.printStackTrace();}
+
+
 
         if(sceneName ==  mathSt) {
             System.out.println(" 지성 +"+sceneIntel);
@@ -67,7 +73,7 @@ public class EducationCenter extends Scene {
             if(0 < i && i < 5)
                 break;
             else {
-                System.out.println("                                         잘 못 입력하셨습니다");
+                System.out.println("                                           잘 못 입력하셨습니다");
                 i = input();
             }
         }
@@ -129,6 +135,7 @@ public class EducationCenter extends Scene {
                 sceneName = mainMenu;
                 System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                 System.out.println("                                         "+sceneName + "를 선택하셨습니다.");
+                System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                 GameManager.getInstance().getUser().turnUp();
                 break;
         }

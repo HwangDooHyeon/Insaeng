@@ -38,11 +38,11 @@ public class Out extends Scene {
     public void menuTxt(){
         System.out.println("                                   ༻✦༺ 　༺༻매장을 선택해 주세요༺༻　༻✦༺");
         System.out.println("                              ༻✦༺　༺༻ 보유 골드: " + user.getWealth() + " 필요 골드: " + eraseWealth + " ༺༻　༻✦༺");
-        System.out.println("                                        1. "+bookStore);
-        System.out.println("                                        2. "+goldBar);
-        System.out.println("                                        3. "+artMuseum);
-        System.out.println("                                        4. "+generalStore);
-        System.out.println("                                        5. "+mainMenu);
+        System.out.println("                                              1. "+bookStore);
+        System.out.println("                                              2. "+goldBar);
+        System.out.println("                                              3. "+artMuseum);
+        System.out.println("                                              4. "+generalStore);
+        System.out.println("                                              5. "+mainMenu);
         System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
     }
 
@@ -88,51 +88,59 @@ public class Out extends Scene {
             switch (i) {
                 case 1:
                     sceneName = bookStore;
-                    System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-                    System.out.println("                                       "+sceneName+" 을(를) 선택하셨습니다.");
+                    try {
+                        System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                        System.out.println("                                          "+sceneName+" 을(를) 선택하셨습니다.");
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {e.printStackTrace();}
+
+
                     switch (randItem(i)) {
                         case 1:
                             getGoomonBook();
-                            System.out.println("                                     서점에서 구몬책을 구매하셨습니다.");
-                            System.out.println("                                       지성 +" + goomonBook + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
+                            System.out.println("                                        서점에서 구몬책을 구매하셨습니다.");
+                            System.out.println("                                           지성 +" + goomonBook + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
                             System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                         case 2:
                             getSsenBook();
-                            System.out.println("                                     서점에서 쎈수학을 구매하셨습니다.");
-                            System.out.println("                                       지성 +" + ssenBook + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
-                            System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                            System.out.println("                                        서점에서 쎈수학을 구매하셨습니다.");
+                            System.out.println("                                           지성 +" + ssenBook + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
+                            System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                         case 3:
                             getMajorBook();
-                            System.out.println("                                   서점에서 전공 서적을 구매하셨습니다.");
-                            System.out.println("                                       지성 +" + majorBook + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
-                            System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                            System.out.println("                                        서점에서 전공 서적을 구매하셨습니다.");
+                            System.out.println("                                           지성 +" + majorBook + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
+                            System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                     }
                     break;
 
                 case 2:
                     sceneName = goldBar;
-                    System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-                    System.out.println("                                       "+sceneName + "를 선택하셨습니다.");
+                    try {
+                        System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                        System.out.println("                                          "+sceneName+" 을(를) 선택하셨습니다.");
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {e.printStackTrace();}
                     switch (randItem(i)) {
                         case 1:
                             getSilver();
-                            System.out.println("                                     금거래소에서 은을 구매하셨습니다.");
-                            System.out.println("                                     사교성 +" + silver + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
+                            System.out.println("                                        금거래소에서 은을 구매하셨습니다.");
+                            System.out.println("                                          사교성 +" + silver + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                         case 2:
                             getGold();
-                            System.out.println("                                     금거래소에서 금을 구매하셨습니다.");
-                            System.out.println("                                     사교성 +" + gold + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
+                            System.out.println("                                        금거래소에서 금을 구매하셨습니다.");
+                            System.out.println("                                          사교성 +" + gold + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                         case 3:
                             getDiamond();
-                            System.out.println("                                 금거래소에서 다이아몬드를 구매하셨습니다.");
-                            System.out.println("                                     사교성 +" + diamond + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
+                            System.out.println("                                     금거래소에서 다이아몬드를 구매하셨습니다.");
+                            System.out.println("                                         사교성 +" + diamond + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                     }
@@ -140,25 +148,28 @@ public class Out extends Scene {
 
                 case 3:
                     sceneName = artMuseum;
-                    System.out.println("                               ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
-                    System.out.println("                                      "+sceneName+" 을(를) 선택하셨습니다.");
+                    try {
+                        System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                        System.out.println("                                          "+sceneName+" 을(를) 선택하셨습니다.");
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {e.printStackTrace();}
                     switch (randItem(i)) {
                         case 1:
                             getArtMuseum_1();
-                            System.out.println("                                        미술관 주위를 구경합니다.");
-                            System.out.println("                                   예술성 +" + artMuseum_1 + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
+                            System.out.println("                                           미술관 주위를 구경합니다.");
+                            System.out.println("                                         예술성 +" + artMuseum_1 + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                         case 2:
                             getArtMuseum_2();
-                            System.out.println("                                        미술관 내부를 구경합니다.");
-                            System.out.println("                                    예술성 +" + artMuseum_2 + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
+                            System.out.println("                                             미술관 내부를 구경합니다.");
+                            System.out.println("                                          예술성 +" + artMuseum_2 + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                         case 3:
                             getArtMuseum_3();
-                            System.out.println("                                          미술품을 관람합니다.");
-                            System.out.println("                                      예술성 +" + artMuseum_3 + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
+                            System.out.println("                                              미술품을 관람합니다.");
+                            System.out.println("                                           예술성 +" + artMuseum_3 + " 스트레스 " + erasePTSD + " 돈 " + eraseWealth);
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                     }
@@ -166,25 +177,28 @@ public class Out extends Scene {
 
                 case 4:
                     sceneName = generalStore;
-                    System.out.println("                               ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
-                    System.out.println("                                      "+sceneName+" 을(를) 선택하셨습니다.");
+                    try {
+                        System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                        System.out.println("                                          "+sceneName+" 을(를) 선택하셨습니다.");
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {e.printStackTrace();}
                     switch (randItem(i)) {
                         case 1:
                             getEclipse();
-                            System.out.println("                                   잡화점에서 이클립스를 구매하셨습니다.");
-                            System.out.println("                                         스트레스 " + (eclipse+erasePTSD) + " 돈 " + eraseWealth);
+                            System.out.println("                                      잡화점에서 이클립스를 구매하셨습니다.");
+                            System.out.println("                                           스트레스 " + (eclipse+erasePTSD) + " 돈 " + eraseWealth);
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                         case 2:
                             getPureMilkyMacaroon();
-                            System.out.println("                                 잡화점에서 순수우유마카롱을 구매하셨습니다.");
-                            System.out.println("                                         스트레스 " + (puremilkyMacaroon+erasePTSD) + " 돈 " + eraseWealth);
+                            System.out.println("                                    잡화점에서 순수우유마카롱을 구매하셨습니다.");
+                            System.out.println("                                           스트레스 " + (puremilkyMacaroon+erasePTSD) + " 돈 " + eraseWealth);
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                         case 3:
                             getMakGookSu();
-                            System.out.println("                                    잡화점에서 막국수를 구매하셨습니다.");
-                            System.out.println("                                         스트레스 " + (makGookSu+erasePTSD) + " 돈 " + eraseWealth);
+                            System.out.println("                                        잡화점에서 막국수를 구매하셨습니다.");
+                            System.out.println("                                           스트레스 " + (makGookSu+erasePTSD) + " 돈 " + eraseWealth);
                             System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                             break;
                     }
@@ -194,12 +208,13 @@ public class Out extends Scene {
                     sceneName = mainMenu;
                     System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                     System.out.println("                                         "+sceneName + "를 선택하셨습니다.");
+                    System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                     GameManager.getInstance().getUser().turnUp();
                     break;
             }
 
         } else {
-            System.out.println("                                          소지 골드가 부족합니다.");
+            System.out.println("                                                            소지 골드가 부족합니다.");
             GameManager.getInstance().getUser().turnUp();
         }
         SceneManager.getInstance().setScene(GameManager.getInstance().menu);
@@ -218,7 +233,7 @@ public class Out extends Scene {
         if(user.getWealth()-5>-1){
             user.setWealth(user.getWealth() + eraseWealth);
         } else {
-            System.out.println("                                          소지 골드가 부족합니다.");
+            System.out.println("                                                            소지 골드가 부족합니다.");
         }
     }
 

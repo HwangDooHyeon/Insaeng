@@ -21,6 +21,8 @@ public class Menu extends Scene {
 
     @Override
     public void render() {
+        System.out.println("                                           메뉴를 선택해주세요!");
+        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
         System.out.println("                                              1. 학교");
         System.out.println("                                              2. 알바");
         System.out.println("                                              3. 파티");

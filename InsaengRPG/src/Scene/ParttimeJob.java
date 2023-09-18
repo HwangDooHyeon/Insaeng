@@ -14,7 +14,7 @@ public class ParttimeJob extends Scene {
         menuTxt();
 
         try {
-            System.out.print("                                         알바 종류 입력 : ");
+            System.out.print("                                            알바 종류 입력 : ");
             num = scanner.nextInt();
         } catch (Exception e) {
             System.out.println("                                      에러");
@@ -23,8 +23,8 @@ public class ParttimeJob extends Scene {
     }
 
     public void menuTxt() {
-        System.out.println("                                 ༻✦༺ 　༻알바 장소를 선택해 주세요༺　༻✦༺");
-        System.out.println("                                   ༻✦༺ 　༺༻ 보유 골드: " + user.getWealth() + "༺༻ 　༻✦༺");
+        System.out.println("                                   ༻✦༺ 　༻알바 장소를 선택해 주세요༺　༻✦༺");
+        System.out.println("                                     ༻✦༺ 　༺༻ 보유 골드: " + user.getWealth() + "༺༻ 　༻✦༺");
         System.out.println("                                              1. " + farm);
         System.out.println("                                              2. " + silverTown);
         System.out.println("                                              3. " + background);
@@ -33,24 +33,37 @@ public class ParttimeJob extends Scene {
     }
 
     public void renderTxt(){
-        if(sceneName == mainMenu){
-            System.out.println("                                       "+sceneName+" 을(를) 선택하셨습니다.");
-            System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-        }else {
-            System.out.println("                                       "+sceneName+" 을(를) 선택하셨습니다.");
-            System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-            System.out.print("                                       돈 +"+sceneWealth+ " 스트레스 +"+scenePTSD);
+        if(sceneName != mainMenu) {
+            try {
+                System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                System.out.println("                                        " + sceneName + " 을(를) 선택하셨습니다.");
+                Thread.sleep(1000);
+                System.out.print("                                        돈 +" + sceneWealth + " 스트레스 +" + scenePTSD);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }else{
+            try {
+                System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                System.out.println("                                        " + sceneName + " 을(를) 선택하셨습니다.");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
 
         if(sceneName ==  silverTown){
             System.out.println(" 도덕성 +"+sceneMorality);
         }else if(sceneName ==  background){
             System.out.println(" 도덕성 -"+sceneMorality);
-        }else{
+        }else if(sceneName == farm) {
             System.out.print("\n");
+        }else{
         }
         System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
     }
+
 
     @Override
     public void initialize() {
@@ -96,6 +109,7 @@ public class ParttimeJob extends Scene {
 
             case 4:
                 sceneName = mainMenu;
+//                SceneManager.getInstance().setScene(GameManager.getInstance().menu);
                 GameManager.getInstance().getUser().turnUp();
                 break;
 
