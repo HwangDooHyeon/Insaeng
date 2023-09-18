@@ -26,18 +26,18 @@ public class Party extends Scene {
     }
 
     public void renderTxt() {
-        System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺");
-        System.out.println("                                      "+sceneName + "를 선택하셨습니다.");
-        System.out.println("                                      돈 -" + sceneWealth + " 사교성 +" + sceneSociability + "스트레스 +" + scenePTSD);
-        System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺");
+        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+        System.out.println("                                      "+sceneName+" 을(를) 선택하셨습니다.");
+        System.out.println("                                      돈 -" + sceneWealth + " 사교성 +" + sceneSociability + " 스트레스 +" + scenePTSD);
+        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
     }
 
     public void menuTxt(){
-        System.out.println("                                ༻✦༺ 　༻파티 종류를 선택해 주세요༺　༻✦༺");
-        System.out.println("                                          1. "+homeParty);
-        System.out.println("                                          2. "+villageParty);
-        System.out.println("                                          3. "+kingdomParty);
-        System.out.println("                                ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺");
+        System.out.println("                                   ༻✦༺ 　༻파티 종류를 선택해 주세요༺　༻✦༺");
+        System.out.println("                                              1. "+homeParty);
+        System.out.println("                                              2. "+villageParty);
+        System.out.println("                                              3. "+kingdomParty);
+        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
     }
 
     @Override

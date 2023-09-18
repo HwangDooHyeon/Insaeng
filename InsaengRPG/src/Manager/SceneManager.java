@@ -33,12 +33,12 @@ public class SceneManager {
                 break;
 
             case 1:
-                System.out.println("                                           학교에 갑니다.");
+                System.out.println("                                            학교에 갑니다.");
                 this.sceneState = new EducationCenter();
                 break;
 
             case 2:
-                System.out.println("                                         아르바이트를 갑니다.");
+                System.out.println("                                          아르바이트를 갑니다.");
                 this.sceneState = new ParttimeJob();
                 break;
 
@@ -48,12 +48,12 @@ public class SceneManager {
                 break;
 
             case 4:
-                System.out.println("                                           외출을 합니다.");
+                System.out.println("                                             외출을 합니다.");
                 this.sceneState = new Out();
                 break;
 
             case 5:
-                System.out.println("                                         상태확인을 합니다.");
+                System.out.println("                                           상태확인을 합니다.");
                 GameManager.getInstance().getUser().render();
                 GameManager.getInstance().getUser().turnUp();
                 GameManager.getInstance().getUser().turnRender();

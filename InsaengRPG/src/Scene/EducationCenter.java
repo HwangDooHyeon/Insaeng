@@ -14,13 +14,13 @@ public class EducationCenter extends Scene {
     private int needMoneyMorSt = -3;
 
     public void menuTxt(){
-        System.out.println("                            ༻✦༺ 　༺༻수업 종류를 선택해 주세요༺༻　༻✦༺");
-        System.out.println("                                ༻✦༺ 　༺༻ 보유 골드: " + user.getWealth() + "༺༻　༻✦༺");
-        System.out.println("                                      1. " + mathSt + " (필요 골드: " + -needMoneyMathSt + ")");
-        System.out.println("                                      2. " + artSt + " (필요 골드: " + -needMoneyArtSt + ")");
-        System.out.println("                                      3. " + morSt + " (필요 골드: " + -needMoneyMorSt + ")");
-        System.out.println("                                      4. " + mainMenu);
-        System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
+        System.out.println("                                 ༻✦༺ 　༺༻수업 종류를 선택해 주세요༺༻　༻✦༺");
+        System.out.println("                                    ༻✦༺ 　༺༻ 보유 골드: " + user.getWealth() + "༺༻　༻✦༺");
+        System.out.println("                                        1. " + mathSt + " (필요 골드: " + -needMoneyMathSt + ")");
+        System.out.println("                                        2. " + artSt + " (필요 골드: " + -needMoneyArtSt + ")");
+        System.out.println("                                        3. " + morSt + " (필요 골드: " + -needMoneyMorSt + ")");
+        System.out.println("                                        4. " + mainMenu);
+        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
     }
 
     private int input() {
@@ -37,9 +37,9 @@ public class EducationCenter extends Scene {
     }
 
     public void renderTxt() {
-        System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-        System.out.println("                                      "+sceneName+"를 선택하셨습니다.");
-        System.out.print("                                      돈 -"+sceneWealth + " 스트레스 +"+scenePTSD);
+        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+        System.out.println("                                        "+sceneName+" 을(를) 선택하셨습니다.");
+        System.out.print("                                        돈 -"+sceneWealth + " 스트레스 +"+scenePTSD);
 
         if(sceneName ==  mathSt) {
             System.out.println(" 지성 +"+sceneIntel);
@@ -50,7 +50,7 @@ public class EducationCenter extends Scene {
         } else {
             System.out.print("\n");
         }
-        System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
     }
 
     @Override
@@ -112,7 +112,7 @@ public class EducationCenter extends Scene {
                 if(user.getWealth() + needMoneyMorSt > -1) {
                     sceneName =  morSt;
                     sceneMorality = 3;
-                    sceneWealth = -3;
+                    sceneWealth = 3;
                     scenePTSD = 3;
 
                     user.setWealth(user.getWealth() - sceneWealth);
@@ -127,8 +127,8 @@ public class EducationCenter extends Scene {
 
             case 4:
                 sceneName = mainMenu;
-                System.out.println("                                          ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺");
-                System.out.println("                                      "+sceneName + "를 선택하셨습니다.");
+                System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+                System.out.println("                                         "+sceneName + "를 선택하셨습니다.");
                 SceneManager.getInstance().setScene(GameManager.getInstance().menu);
                 break;
         }
