@@ -16,7 +16,7 @@ public class SceneManager {
     }
 
     private Scene sceneState = null;
-    public int firstTurn = 3;
+    public int firstTurn = 24;
     public int turn = firstTurn;
 
     public int getTurn() {return turn; }

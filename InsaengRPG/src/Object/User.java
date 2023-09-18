@@ -7,12 +7,12 @@ public class User {
     final int MAX = 100;
     final int MIN = 0;
 
-    int Intel = MIN;
-    int Wealth = 30;
-    int Sociability =  MIN;
-    int Morality =  MIN;
-    int Artistry =  MIN;
-    int PTSD =  MIN;
+    int Intel = 0;
+    int Wealth = 100;
+    int Sociability =  0;
+    int Morality =  100;
+    int Artistry =  0;
+    int PTSD =  0;
 
     public User(){}
 
@@ -51,26 +51,31 @@ public class User {
         SceneManager.getInstance().setTurn(turn);
         return 0;
     }
-    public  void turnRender() {
-        if (SceneManager.getInstance().getTurn() != 0) {
-            System.out.println("                                 ༻✦༺ 　༺༻현재" + SceneManager.getInstance().getTurn() + "턴 남았습니다.༺༻　༻✦༺");
-            System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+    public  void turnRender(){
+        try {
+            Thread.sleep(1000);
+            System.out.println("                                    ༻✦༺ 　༺༻현재" + SceneManager.getInstance().getTurn() +"턴 남았습니다.༺༻　༻✦༺");
+            Thread.sleep(1000);
+            System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
             System.out.println("\n");
-            System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-        }
+            System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
+
+        } catch (InterruptedException e) {e.printStackTrace();}
+
+
     }
 
     public void render(){
         // 상태확인
 
-        System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
+        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
         System.out.println("                                              골드 : " + getWealth());
         System.out.println("                                              지성 : " +getIntel());
         System.out.println("                                              스트레스 : " + getPTSD());
         System.out.println("                                              도덕성 : " + getMorality());
         System.out.println("                                              사교성 : "+ getSociability());
         System.out.println("                                              예술성 : " + getArtistry());
-        System.out.println("                            ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
+        System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
     }
 
 }
