@@ -1,7 +1,6 @@
 package Scene;
 
 import Manager.GameManager;
-
 import javax.swing.*;
 
 public class Ending extends Scene{
@@ -16,8 +15,6 @@ public class Ending extends Scene{
 
     @Override
     public void render() {
-//        Scene sceneState = new Status();
-//        sceneState.render();
         GameManager.getInstance().getUser().render();
         if (user.getIntel() > 90 && user.getSociability() > 90 && user.getMorality() > 90 && user.getArtistry() > 90) {
             System.out.println("                      ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺");

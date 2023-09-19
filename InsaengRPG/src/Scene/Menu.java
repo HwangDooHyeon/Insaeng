@@ -2,14 +2,12 @@ package Scene;
 
 import Manager.GameManager;
 import Manager.SceneManager;
-import Scene.Scene;
 import Utility.ScanManager;
 
 public class Menu extends Scene {
 
     @Override
-    public void initialize() {
-    }
+    public void initialize() {}
 
     @Override
     public int update() {

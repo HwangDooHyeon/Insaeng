@@ -3,7 +3,6 @@ package Object;
 import Manager.SceneManager;
 
 public class User {
-
     final int MAX = 100;
     final int MIN = 0;
 
@@ -61,13 +60,9 @@ public class User {
             System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
 
         } catch (InterruptedException e) {e.printStackTrace();}
-
-
     }
 
     public void render(){
-        // 상태확인
-
         System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
         System.out.println("                                              골드 : " + getWealth());
         System.out.println("                                              지성 : " +getIntel());
@@ -77,5 +72,4 @@ public class User {
         System.out.println("                                              예술성 : " + getArtistry());
         System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
     }
-
 }

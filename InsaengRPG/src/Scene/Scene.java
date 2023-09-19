@@ -2,7 +2,6 @@ package Scene;
 
 import Manager.GameManager;
 import Object.User;
-
 import java.util.Scanner;
 
 public abstract class Scene {
