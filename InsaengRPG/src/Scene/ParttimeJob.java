@@ -59,8 +59,7 @@ public class ParttimeJob extends Scene {
             System.out.println(" 도덕성 -"+sceneMorality);
         }else if(sceneName == farm) {
             System.out.print("\n");
-        }else{
-        }
+        }else{}
         System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
     }
 
@@ -109,7 +108,6 @@ public class ParttimeJob extends Scene {
 
             case 4:
                 sceneName = mainMenu;
-//                SceneManager.getInstance().setScene(GameManager.getInstance().menu);
                 GameManager.getInstance().getUser().turnUp();
                 break;
 

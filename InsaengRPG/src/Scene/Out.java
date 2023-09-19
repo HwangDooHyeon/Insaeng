@@ -4,7 +4,6 @@ import Manager.*;
 import java.util.Scanner;
 
 public class Out extends Scene {
-
     private String bookStore = "서점";
     private String goldBar = "금거래소";
     private String artMuseum = "미술관";

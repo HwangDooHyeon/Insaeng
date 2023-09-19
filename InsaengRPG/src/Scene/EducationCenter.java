@@ -81,7 +81,6 @@ public class EducationCenter extends Scene {
         switch (i) {
             case 1:
                 if(user.getWealth() + needMoneyMathSt > -1) {
-
                     sceneName =  mathSt;
                     sceneIntel = 5;
                     sceneWealth = 5;

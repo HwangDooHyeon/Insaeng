@@ -3,7 +3,6 @@ package MainUpdate;
 import Manager.GameManager;
 import Manager.SceneManager;
 import Utility.ScanManager;
-
 import java.util.Scanner;
 
 public class MainUpdate {

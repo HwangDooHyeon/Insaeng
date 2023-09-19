@@ -1,7 +1,5 @@
 package Scene;
 import Manager.*;
-import Scene.Scene;
-
 import java.util.Scanner;
 
 public class Party extends Scene {
@@ -116,9 +114,7 @@ public class Party extends Scene {
                 System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                 GameManager.getInstance().getUser().turnUp();
                 break;
-
         }
-
         user.setWealth(user.getWealth() - sceneWealth);
         user.setSociability(user.getSociability() + sceneSociability);
         user.setPTSD(user.getPTSD() + scenePTSD);

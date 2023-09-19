@@ -3,7 +3,6 @@ package Manager;
 import Object.User;
 
 public class GameManager {
-
     private static GameManager instance = null;
 
     public static GameManager getInstance()

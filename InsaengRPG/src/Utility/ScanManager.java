@@ -1,7 +1,6 @@
 package Utility;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.NoSuchElementException;
 
 
 public class ScanManager {
@@ -30,7 +29,6 @@ public class ScanManager {
                 System.out.println("                             숫자를 입력해주세요.");
             }
         }
-
         return num;
     }
 
