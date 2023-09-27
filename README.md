@@ -6,3 +6,5 @@
 깃마인드(프매): https://gitmind.com/app/docs/mh1xteui
 
 깃마인드(쇼핑몰): https://gitmind.com/app/docs/mnhzzlde
+
+깃마인드(프매2): https://gitmind.com/app/docs/moxpv6b7
