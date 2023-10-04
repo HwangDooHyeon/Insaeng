@@ -1,6 +1,6 @@
 import MainUpdate.MainUpdate;
 import Manager.SceneManager;
-import Scene.Ending;
+//import Scene.Ending;
 import Scene.Scene;
 
 public class Main {
@@ -18,8 +18,8 @@ public class Main {
                 main.update();
             }
 
-            Scene e  = new Ending();
-            e.render();
+//            Scene e  = new Ending();
+//            e.render();
 
         }
     }

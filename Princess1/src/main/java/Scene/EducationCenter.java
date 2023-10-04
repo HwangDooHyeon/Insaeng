@@ -13,18 +13,18 @@ public class EducationCenter extends Scene {
     private String morSt = "도덕수업";
     private String mainMenu = "메인";
 
-    private int needMoneyMathSt = -5;
-    private int needMoneyArtSt = -7;
-    private int needMoneyMorSt = -3;
+    private final int NeedMoneyMathSt = -5;
+    private final int NeedMoneyArtSt = -7;
+    private final int NeedMoneyMorSt = -3;
     UserService userService = null;
-    //UserDto userDTO = new UserDto();
 
     public void menuTxt(){
+        User user = userService.findById(1L);
         System.out.println("                                 ༻✦༺ 　༺༻수업 종류를 선택해 주세요༺༻　༻✦༺");
         System.out.println("                                    ༻✦༺ 　༺༻ 보유 골드: " + user.getWealth() + "༺༻　༻✦༺");
-        System.out.println("                                        1. " + mathSt + " (필요 골드: " + -needMoneyMathSt + ")");
-        System.out.println("                                        2. " + artSt + " (필요 골드: " + -needMoneyArtSt + ")");
-        System.out.println("                                        3. " + morSt + " (필요 골드: " + -needMoneyMorSt + ")");
+        System.out.println("                                        1. " + mathSt + " (필요 골드: " + -NeedMoneyMathSt + ")");
+        System.out.println("                                        2. " + artSt + " (필요 골드: " + -NeedMoneyArtSt + ")");
+        System.out.println("                                        3. " + morSt + " (필요 골드: " + -NeedMoneyMorSt + ")");
         System.out.println("                                        4. " + mainMenu);
         System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺ ༻✦༺");
     }
@@ -69,7 +69,6 @@ public class EducationCenter extends Scene {
 
     @Override
     public void initialize() {
-        //this.user = GameManager.getInstance().getUser();
         scanner = new Scanner(System.in);
         userService = new UserService();
     }
@@ -93,7 +92,7 @@ public class EducationCenter extends Scene {
         User user = userService.findById(1L);
         switch (i) {
             case 1:
-                if(user.getWealth() + needMoneyMathSt > -1) {
+                if(user.getWealth() + NeedMoneyMathSt > -1) {
                     sceneName =  mathSt;
                     sceneIntel = 5;
                     sceneWealth = 5;
@@ -102,17 +101,16 @@ public class EducationCenter extends Scene {
                     userDTO.setWealth(user.getWealth() - sceneWealth);
                     userDTO.setPTSD(user.getPTSD() + scenePTSD);
                     userDTO.setIntel(user.getIntel() + sceneIntel);
-                    userService.save(userDTO);
+                    userService.updateuser(userDTO);
                     renderTxt();
                     return 0;
                 } else {
                     System.out.println("                                          소지 골드가 부족합니다.");
-                    //GameManager.getInstance().getUser().turnUp();
                     return -1;
                 }
 
             case 2:
-                if(user.getWealth() + needMoneyArtSt > -1) {
+                if(user.getWealth() + NeedMoneyArtSt > -1) {
 
                     sceneName =  artSt;
                     sceneArtistry = 3;
@@ -122,17 +120,16 @@ public class EducationCenter extends Scene {
                     userDTO.setWealth(user.getWealth() - sceneWealth);
                     userDTO.setPTSD(user.getPTSD() + scenePTSD);
                     userDTO.setArtistry(user.getArtistry() + sceneArtistry);
-                    userService.save(userDTO);
+                    userService.updateuser(userDTO);
                     renderTxt();
                     return 0;
                 } else {
                     System.out.println("                                          소지 골드가 부족합니다.");
-                    //GameManager.getInstance().getUser().turnUp();
                     return -1;
                 }
 
             case 3:
-                if(user.getWealth() + needMoneyMorSt > -1) {
+                if(user.getWealth() + NeedMoneyMorSt > -1) {
                     sceneName =  morSt;
                     sceneMorality = 3;
                     sceneWealth = 3;
@@ -141,12 +138,11 @@ public class EducationCenter extends Scene {
                     userDTO.setWealth(user.getWealth() - sceneWealth);
                     userDTO.setPTSD(user.getPTSD() + scenePTSD);
                     userDTO.setMorality(user.getMorality() + sceneMorality);
-                    userService.save(userDTO);
+                    userService.updateuser(userDTO);
                     renderTxt();
                     return 0;
                 } else {
                     System.out.println("                                          소지 골드가 부족합니다.");
-                    //GameManager.getInstance().getUser().turnUp();
                     return -1;
                 }
 
@@ -155,12 +151,9 @@ public class EducationCenter extends Scene {
                 System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
                 System.out.println("                                         "+sceneName + "를 선택하셨습니다.");
                 System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-                //GameManager.getInstance().getUser().turnUp();
                 return -1;
         }
 
-        //SceneManager.getInstance().setScene(GameManager.getInstance().menu);
-        //GameManager.getInstance().getUser().turnRender();
         return 0;
     }
 

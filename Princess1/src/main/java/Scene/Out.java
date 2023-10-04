@@ -66,7 +66,7 @@
 //
 //    @Override
 //    public void initialize() {
-//        this.user = GameManager.getInstance().getUser();
+////        this.user = GameManager.getInstance().getUser();
 //        scanner = new Scanner(System.in);
 //    }
 //
@@ -208,16 +208,16 @@
 //                    System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
 //                    System.out.println("                                         "+sceneName + "를 선택하셨습니다.");
 //                    System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
-//                    GameManager.getInstance().getUser().turnUp();
+////                    GameManager.getInstance().getUser().turnUp();
 //                    break;
 //            }
 //
 //        } else {
 //            System.out.println("                                                            소지 골드가 부족합니다.");
-//            GameManager.getInstance().getUser().turnUp();
+////            GameManager.getInstance().getUser().turnUp();
 //        }
 //        SceneManager.getInstance().setScene(GameManager.getInstance().menu);
-//        GameManager.getInstance().getUser().turnRender();
+////        GameManager.getInstance().getUser().turnRender();
 //        return 0;
 //    }
 //
