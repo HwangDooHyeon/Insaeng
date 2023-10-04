@@ -1,6 +1,5 @@
 package Scene;
 
-import Manager.GameManager;
 import Manager.SceneManager;
 import javax.swing.*;
 
@@ -11,8 +10,7 @@ public class Intro extends Scene{
 
     @Override
     public int update() {
-        SceneManager.getInstance().setScene(
-                GameManager.getInstance().menu );
+        SceneManager.getInstance().setScene(0);
         return 0;
     }
 

@@ -23,8 +23,9 @@ public class SceneManager {
     private SceneManager() {
         userService = new UserService();
         UserDto userDTO = new UserDto();
-        //userDTO.setWealth(100);
-        userService.save(userDTO);
+        userService.create(userDTO);
+        userDTO.setWealth(100);
+        userService.updateuser(userDTO);
     }
     public int firstTurn = 24;
     public int turn = firstTurn;
@@ -46,7 +47,7 @@ public class SceneManager {
 
             case 2:
                 System.out.println("                                          아르바이트를 갑니다.");
-                this.sceneState = new ParttimeJob();
+//                this.sceneState = new ParttimeJob();
                 break;
 
             case 3:

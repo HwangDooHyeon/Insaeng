@@ -32,7 +32,7 @@ public class UserRepository {
     // -------------- <Create> --------------------------------
     public void createTable(){
         String tableSQL = "CREATE TABLE IF NOT EXISTS User (" +
-                "id INT AUTO_INCREMENT PRIMARY KEY," +
+                "ID INT AUTO_INCREMENT PRIMARY KEY," +
                 "Intel VARCHAR(255) NOT NULL, " +
                 "Wealth VARCHAR(255) NOT NULL, " +
                 "Sociability VARCHAR(255) NOT NULL, " +
@@ -49,18 +49,23 @@ public class UserRepository {
     }
 
 
-    public User findById(Long id) {
+    public User findById(Long ID) {
         String selectSQL = "SELECT * FROM User WHERE ID=?";
         try (PreparedStatement statement = connection.prepareStatement(selectSQL)) {
 
-            statement.setLong(1, id);
+            statement.setLong(1, ID);
             ResultSet resultSet = statement.executeQuery();
 
             if(resultSet.next()){
                 return new User(
-                        resultSet.getLong("id"),
-                        resultSet.getString("name"),
-                        resultSet.getString("email"));
+                        resultSet.getLong("ID"),
+                        resultSet.getInt("Intel"),
+                        resultSet.getInt("Wealth"),
+                        resultSet.getInt("Sociability"),
+                        resultSet.getInt("Morality"),
+                        resultSet.getInt("Artistry"),
+                        resultSet.getInt("PTSD"));
+
             }
 
             resultSet.close();
@@ -72,44 +77,80 @@ public class UserRepository {
         }
     }
 
+    public void create(User user) {
+        try {
+            String insertSQL = "INSERT INTO User (Intel, Wealth, Sociability, Morality, Artistry, PTSD) VALUES(?,?,?,?,?,?)";
+            PreparedStatement insertStatement = connection.prepareStatement(insertSQL);
 
+            insertStatement.setString(1, String.valueOf(user.getIntel()));
+            insertStatement.setString(2, String.valueOf(user.getWealth()));
+            insertStatement.setString(3, String.valueOf(user.getSociability()));
+            insertStatement.setString(4, String.valueOf(user.getMorality()));
+            insertStatement.setString(5, String.valueOf(user.getArtistry()));
+            insertStatement.setString(6, String.valueOf(user.getPTSD()));
 
-    public void save(User user) {
-
-        try{
-            if(user.getID() == null)
-            {
-                System.out.println("11111111111111111111111");
-                String insertSQL = "INSERT INTO User (Intel, Wealth, Sociability, Morality, Artistry, PTSD) VALUES (?, ?, ?, ?, ?, ?)";
-                PreparedStatement insertStatement = connection.prepareStatement(insertSQL);
-                insertStatement.setLong(1, user.getIntel());
-                insertStatement.setLong(2, user.getWealth());
-                insertStatement.setLong(3, user.getSociability());
-                insertStatement.setLong(4, user.getMorality());
-                insertStatement.setLong(5, user.getArtistry());
-                insertStatement.setLong(6, user.getPTSD());
-                insertStatement.executeUpdate();
-                insertStatement.close();
-            }
-            else {
-                System.out.println("222222222222222222222");
-                String updateSQL = "UPDATE User SET  Intel = ?, Wealth = ?, Sociability = ?, Morality = ?, Artistry = ?, PTSD = ? WHERE id = ?";
-                PreparedStatement updateStatement = connection.prepareStatement(updateSQL);
-                updateStatement.setLong(1, user.getIntel());
-                updateStatement.setLong(2, user.getWealth());
-                updateStatement.setLong(3, user.getSociability());
-                updateStatement.setLong(4, user.getMorality());
-                updateStatement.setLong(5, user.getArtistry());
-                updateStatement.setLong(6, user.getPTSD());
-                updateStatement.setLong(7, user.getID());
-                updateStatement.executeUpdate();
-                updateStatement.close();
-            }
-
-        }catch (SQLException e) {
+            insertStatement.execute();
+            insertStatement.close();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+
+    public void updateuser(User user) {
+
+        try {
+            String updateSQL = "UPDATE User SET Intel = ?, Wealth = ?, Sociability = ?, Morality = ?, Artistry = ?, PTSD = ? WHERE ID = ?";
+            PreparedStatement updateStatement = connection.prepareStatement(updateSQL);
+            updateStatement.setInt(1, user.getIntel());
+            updateStatement.setInt(2, user.getWealth());
+            updateStatement.setInt(3, user.getSociability());
+            updateStatement.setInt(4, user.getMorality());
+            updateStatement.setInt(5, user.getArtistry());
+            updateStatement.setInt(6, user.getPTSD());
+            updateStatement.setLong(7, user.getID());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+//    public void save(User user) {
+//
+//        try{
+//            if(user.getID() == null)
+//            {
+//                System.out.println("11111111111111111111111");
+//                String insertSQL = "INSERT INTO User (Intel, Wealth, Sociability, Morality, Artistry, PTSD) VALUES (?, ?, ?, ?, ?, ?)";
+//                PreparedStatement insertStatement = connection.prepareStatement(insertSQL);
+//                insertStatement.setLong(1, user.getIntel());
+//                insertStatement.setLong(2, user.getWealth());
+//                insertStatement.setLong(3, user.getSociability());
+//                insertStatement.setLong(4, user.getMorality());
+//                insertStatement.setLong(5, user.getArtistry());
+//                insertStatement.setLong(6, user.getPTSD());
+//                insertStatement.executeUpdate();
+//                insertStatement.close();
+//            }
+//            else {
+//                System.out.println("222222222222222222222");
+//                String updateSQL = "UPDATE User SET  Intel = ?, Wealth = ?, Sociability = ?, Morality = ?, Artistry = ?, PTSD = ? WHERE id = ?";
+//                PreparedStatement updateStatement = connection.prepareStatement(updateSQL);
+//                updateStatement.setLong(1, user.getIntel());
+//                updateStatement.setLong(2, user.getWealth());
+//                updateStatement.setLong(3, user.getSociability());
+//                updateStatement.setLong(4, user.getMorality());
+//                updateStatement.setLong(5, user.getArtistry());
+//                updateStatement.setLong(6, user.getPTSD());
+//                updateStatement.setLong(7, user.getID());
+//                updateStatement.executeUpdate();
+//                updateStatement.close();
+//            }
+//
+//        }catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     // -------------- <Select> --------------------------------
 

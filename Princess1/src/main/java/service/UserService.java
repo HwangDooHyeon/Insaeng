@@ -22,10 +22,9 @@ public class UserService {
         UserDto userDto = new UserDto();
     }
 
-    public void save(UserDto userDto) {
-        userRepository.save(userDto.toEntity());
-    }
+    public void create(UserDto userDto) { userRepository.create(userDto.toEntity()); }
 
+    public void updateuser(UserDto userDto) { userRepository.updateuser(userDto.toEntity()); }
 
     public User findById(Long id) {
         return userRepository.findById(id);

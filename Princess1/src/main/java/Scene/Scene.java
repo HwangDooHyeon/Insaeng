@@ -1,6 +1,5 @@
 package Scene;
 
-import Manager.GameManager;
 import domain.User;
 import service.UserService;
 
