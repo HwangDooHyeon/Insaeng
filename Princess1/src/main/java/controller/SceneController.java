@@ -1,18 +1,15 @@
-package Manager;
+package controller;
 
-import Scene.*;
-import Scene.Menu;
-import domain.User;
 import dto.UserDto;
-import service.UserService;
+import service.*;
 
-public class SceneManager {
-    private static SceneManager instance = null;
+public class SceneController {
+    private static SceneController instance = null;
 
-    public static SceneManager getInstance()
+    public static SceneController getInstance()
     {
         if(instance == null)
-            instance = new SceneManager();
+            instance = new SceneController();
 
         return instance;
     }
@@ -20,7 +17,7 @@ public class SceneManager {
     private Scene sceneState = null;
 
     private UserService userService = null;
-    private SceneManager() {
+    private SceneController() {
         userService = new UserService();
         UserDto userDTO = new UserDto();
         userService.create(userDTO);
@@ -41,37 +38,37 @@ public class SceneManager {
     public void setScene(int Id) {
         switch (Id) {
             case 0:
-                sceneState = new Menu();
+                sceneState = new MenuController();
                 break;
 
             case 1:
                 System.out.println("                                            학교에 갑니다.");
-                this.sceneState = new EducationCenter();
+                this.sceneState = new EducationCenterService();
                 break;
 
             case 2:
                 System.out.println("                                          아르바이트를 갑니다.");
-                this.sceneState = new ParttimeJob();
+                this.sceneState = new ParttimeJobService();
                 break;
 
             case 3:
                 System.out.println("                                           파티에 참석합니다.");
-                this.sceneState = new Party();
+                this.sceneState = new PartyService();
                 break;
 
             case 4:
                 System.out.println("                                             외출을 합니다.");
-                this.sceneState = new Out();
+                this.sceneState = new OutService();
                 break;
 
             case 5:
 
                 System.out.println("                                           상태확인을 합니다.");
-                this.sceneState = new Status();
+                this.sceneState = new StatusController();
                 break;
 
             case 6:
-                sceneState = new Intro();
+                sceneState = new IntroController();
                 break;
 
         }
@@ -80,7 +77,7 @@ public class SceneManager {
     public  void turnRender(){
         try {
             Thread.sleep(1000);
-            System.out.println("                                    ༻✦༺ 　༺༻현재" + SceneManager.getInstance().getTurn() +"턴 남았습니다.༺༻　༻✦༺");
+            System.out.println("                                    ༻✦༺ 　༺༻현재" + SceneController.getInstance().getTurn() +"턴 남았습니다.༺༻　༻✦༺");
             Thread.sleep(1000);
             System.out.println("                                 ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺ 　༻✧༺　༻✦༺  ༻✦༺");
             System.out.println("\n");

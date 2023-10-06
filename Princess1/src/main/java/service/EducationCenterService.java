@@ -1,13 +1,13 @@
-package Scene;
+package service;
 
-import Manager.*;
+import controller.Scene;
+import controller.SceneController;
 import domain.User;
 import dto.UserDto;
-import service.UserService;
 
 import java.util.Scanner;
 
-public class EducationCenter extends Scene {
+public class EducationCenterService extends Scene {
     private String mathSt = "수학수업";
     private String artSt = "미술수업";
     private String morSt = "도덕수업";
@@ -73,7 +73,7 @@ public class EducationCenter extends Scene {
 
     @Override
     public int update() {
-        SceneManager.getInstance().setScene(0);
+        SceneController.getInstance().setScene(0);
 
         int i = input();
 

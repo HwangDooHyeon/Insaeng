@@ -1,13 +1,13 @@
-package Scene;
+package service;
 
-import Manager.*;
+import controller.Scene;
+import controller.SceneController;
 import domain.User;
 import dto.UserDto;
-import service.UserService;
 
 import java.util.Scanner;
 
-public class ParttimeJob extends Scene {
+public class ParttimeJobService extends Scene {
     private String farm = "농장";
     private String silverTown = "양로원";
     private String background = "뒷골목";
@@ -78,7 +78,7 @@ public class ParttimeJob extends Scene {
 
     @Override
     public int update() {
-        SceneManager.getInstance().setScene(0);
+        SceneController.getInstance().setScene(0);
 
         int i = input();
 

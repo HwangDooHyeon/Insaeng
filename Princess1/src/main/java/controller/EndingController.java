@@ -1,4 +1,4 @@
-package Scene;
+package controller;
 
 //import Manager.GameManager;
 import domain.User;
@@ -6,7 +6,7 @@ import service.UserService;
 
 import javax.swing.*;
 
-public class Ending extends Scene{
+public class EndingController extends Scene{
 
     UserService userService = null;
     String Line;
@@ -167,7 +167,7 @@ public class Ending extends Scene{
             System.out.println(Space + "딸이 자라서 왕이 되었습니다.");
             System.out.println(Line);
             SwingUtilities.invokeLater(() -> {
-                new ImageDisplay("InsaengRPG/src/main/images/King.jpg", 400, 536).setVisible(true);
+                new ImageDisplayController("src/main/java/images/King.jpg", 400, 536).setVisible(true);
             });
         } else if (user.getWealth() > 90 && user.getMorality() > 20) {
             System.out.println(Line);
@@ -175,7 +175,7 @@ public class Ending extends Scene{
             System.out.println(Space + "딸이 자라서 재력가가 되었습니다.");
             System.out.println(Line);
             SwingUtilities.invokeLater(() -> {
-                new ImageDisplay("InsaengRPG/src/images/Rich.jpg", 400, 536).setVisible(true);
+                new ImageDisplayController("src/main/java/images/Rich.jpg", 400, 536).setVisible(true);
             });
         } else if (user.getArtistry() > 70) {
             System.out.println(Line);
@@ -183,7 +183,7 @@ public class Ending extends Scene{
             System.out.println(Space + "딸이 자라서 예술가가 되었습니다.");
             System.out.println(Line);
             SwingUtilities.invokeLater(() -> {
-                new ImageDisplay("InsaengRPG/src/images/Artist.jpg", 400, 536).setVisible(true);
+                new ImageDisplayController("src/main/java/images/Artist.jpg", 400, 536).setVisible(true);
             });
         } else if (user.getPTSD() > 80 && user.getMorality() < 20) {
             System.out.println(Line);
@@ -191,7 +191,7 @@ public class Ending extends Scene{
             System.out.println(Space + "딸이 자라서 마왕이 되었습니다.");
             System.out.println(Line);
             SwingUtilities.invokeLater(() -> {
-                new ImageDisplay("src/images/King.jpg", 400, 536).setVisible(true);
+                new ImageDisplayController("src/main/java/images/DarkKing.jpg", 400, 536).setVisible(true);
             });
         } else {
             System.out.println(Line);
@@ -199,7 +199,7 @@ public class Ending extends Scene{
             System.out.println(Space + "딸이 자라서 돼지농장의 주인이 되었습니다.");
             System.out.println(Line);
             SwingUtilities.invokeLater(() -> {
-                new ImageDisplay("InsaengRPG/src/images/PigparmCEO.jpg", 400, 536).setVisible(true);
+                new ImageDisplayController("src/main/java/images/PigparmCEO.jpg", 400, 536).setVisible(true);
             });
         }
     }

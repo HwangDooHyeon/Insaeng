@@ -1,13 +1,11 @@
-package Scene;
+package controller;
 
-import Manager.*;
 import domain.User;
-import dto.UserDto;
 import service.UserService;
 
 import java.util.Scanner;
 
-public class Status extends Scene {
+public class StatusController extends Scene {
 
     UserService userService = null;
 
@@ -19,7 +17,7 @@ public class Status extends Scene {
 
     @Override
     public int update() {
-        SceneManager.getInstance().setScene(0);
+        SceneController.getInstance().setScene(0);
         return -1;
     }
 

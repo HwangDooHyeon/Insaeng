@@ -1,10 +1,10 @@
-package Scene;
+package controller;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ImageDisplay extends JFrame {
-    public ImageDisplay(String imagePath, int desiredWidth, int desiredHeight) {
+public class ImageDisplayController extends JFrame {
+    public ImageDisplayController(String imagePath, int desiredWidth, int desiredHeight) {
         ImageIcon imageIcon = new ImageIcon(imagePath);
         Image image = imageIcon.getImage().getScaledInstance(desiredWidth, desiredHeight, Image.SCALE_SMOOTH);
         JLabel imageLabel = new JLabel(new ImageIcon(image));

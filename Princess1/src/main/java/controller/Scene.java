@@ -1,7 +1,4 @@
-package Scene;
-
-import domain.User;
-import service.UserService;
+package controller;
 
 import java.util.Scanner;
 

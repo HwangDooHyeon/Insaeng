@@ -1,13 +1,13 @@
-package Scene;
+package service;
 
+import controller.Scene;
+import controller.SceneController;
 import domain.*;
-import Manager.*;
 import dto.UserDto;
-import service.UserService;
 
 import java.util.Scanner;
 
-public class Out extends Scene {
+public class OutService extends Scene {
     private String bookStore = "서점";
     private String goldBar = "금거래소";
     private String artMuseum = "미술관";
@@ -78,7 +78,7 @@ public class Out extends Scene {
 
     @Override
     public int update() {
-        SceneManager.getInstance().setScene(0);
+        SceneController.getInstance().setScene(0);
 
         int i = input();
 
@@ -224,7 +224,7 @@ public class Out extends Scene {
         } else {
             System.out.println("                                                            소지 골드가 부족합니다.");
         }
-        SceneManager.getInstance().setScene(0);
+        SceneController.getInstance().setScene(0);
         return 0;
     }
 

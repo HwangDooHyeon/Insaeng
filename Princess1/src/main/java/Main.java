@@ -1,24 +1,24 @@
-import MainUpdate.MainUpdate;
-import Manager.SceneManager;
-import Scene.Ending;
-import Scene.Scene;
+import controller.MainUpdateController;
+import controller.SceneController;
+import controller.EndingController;
+import controller.Scene;
 
 public class Main {
     public static void main(String[] args) {
 
-        MainUpdate main = new MainUpdate();
+        MainUpdateController main = new MainUpdateController();
         main.initialize();
 
-        while(SceneManager.getInstance().turn > 0)
+        while(SceneController.getInstance().turn > 0)
         {
-            int mainTurn = SceneManager.getInstance().turn;
+            int mainTurn = SceneController.getInstance().turn;
             mainTurn--;
-            SceneManager.getInstance().setTurn(mainTurn);
+            SceneController.getInstance().setTurn(mainTurn);
             main.render();
             main.update();
         }
 
-        Scene e = new Ending();
+        Scene e = new EndingController();
         e.render();
 
     }

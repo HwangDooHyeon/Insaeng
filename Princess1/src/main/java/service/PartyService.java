@@ -1,12 +1,12 @@
-package Scene;
-import Manager.*;
+package service;
+import controller.Scene;
+import controller.SceneController;
 import domain.User;
 import dto.UserDto;
-import service.UserService;
 
 import java.util.Scanner;
 
-public class Party extends Scene {
+public class PartyService extends Scene {
     private String homeParty = "홈파티";
     private String villageParty = "마을잔치";
     private String kingdomParty = "왕궁파티";
@@ -60,7 +60,7 @@ public class Party extends Scene {
 
     @Override
     public int update() {
-        SceneManager.getInstance().setScene(0);
+        SceneController.getInstance().setScene(0);
 
         int i = input();
 

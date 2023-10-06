@@ -1,6 +1,5 @@
 package domain;
 
-import Manager.SceneManager;
 import lombok.Builder;
 import lombok.Getter;
 
